@@ -1,0 +1,49 @@
+# Environment & Secrets
+.env
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Data files (too large for git)
+*.csv
+*.json
+*.jsonl
+!sample/*.json
+!sample/*.csv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Output
+visualization/figures/*.png
+visualization/figures/*.pdf
+output/
+
+# Original flat scripts (kept for reference, not part of the refactored codebase)
+PermitGuard_blind.py
+new_permit_json_data_process.py
+etherscan_nametag.py
+print_figures.py
+plot_combined_features.py
+
+# Paper manuscript
+permitguard.md
