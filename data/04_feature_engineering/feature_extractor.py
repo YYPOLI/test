@@ -200,5 +200,53 @@ def run_spender_analysis():
     print(f"Spender features saved to {output_path}")
 
 
+def analyze_spender_results():
+    """Compute descriptive statistics for spender features, grouped by label."""
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.width', 1000)
+    pd.set_option('display.float_format', '{:.4f}'.format)
+
+    result_path = os.path.join(BASE_PATH, "BigQuery_since20251230/analysis/spender_analysis_result_21months_0209.csv")
+    df_result = pd.read_csv(result_path)
+
+    print(f"Total samples: {len(df_result)}")
+    print(f"Label distribution:\n{df_result['label_spender'].value_counts()}")
+
+    # Address type distribution
+    print("\n[1] Address Type Distribution")
+    type_dist = pd.crosstab(df_result['label_spender'], df_result['type'], normalize='index') * 100
+    print(type_dist.round(2).astype(str) + '%')
+
+    # Non-ghost ratio
+    print("\n[2] Non-Ghost Ratio")
+    ghost_stats = df_result.groupby('label_spender')['is_ghost'].apply(lambda x: (x == 0).mean() * 100)
+    ghost_df = ghost_stats.to_frame(name='Non-Ghost Ratio (%)')
+    print(ghost_df.round(2).astype(str) + '%')
+
+    # Core feature statistics (exclude truncated large addresses)
+    print("\n[3] Core Feature Statistics (excluding truncated)")
+    df_valid = df_result[(df_result['total_tx_count'] != -1) & (df_result['is_ghost'] == 0)].copy()
+
+    numeric_cols = [
+        'total_tx_count', 'lifespan_hours', 'tx_density',
+        'mediated_theft_count', 'direct_in_count', 'mediated_op_ratio',
+        'token_flow_ratio', 'sender_receiver_ratio', 'top1_gas_payer_ratio', 'high_value_ratio',
+    ]
+
+    for col in numeric_cols:
+        if col in df_valid.columns:
+            df_valid[col] = pd.to_numeric(df_valid[col], errors='coerce')
+
+    stats = df_valid.groupby('label_spender')[numeric_cols].agg(['min', 'max', 'median', 'mean'])
+
+    for lbl in df_valid['label_spender'].unique():
+        print(f"\nLabel: {lbl}")
+        print("~" * 80)
+        subset = stats.loc[lbl]
+        summary_df = subset.unstack(level=1)[['min', 'max', 'median', 'mean']]
+        print(summary_df)
+
+
 if __name__ == '__main__':
     run_spender_analysis()
+    # analyze_spender_results()
