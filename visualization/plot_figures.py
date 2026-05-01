@@ -6,8 +6,11 @@ Each function produces one figure for the paper.
 Usage:
     python visualization/plot_figures.py [function_name]
 
-Example:
-    python visualization/plot_figures.py monthly_permits
+Available figures:
+    fig2_permit_trend          - Figure 2: The permit transaction trend from 2023 to 2024
+    fig3_cross_stage_semantics - Figure 3: Analysis of cross-stage semantics
+    fig5_report_quality        - Figure 5: Cross-model consensus evaluation of forensic report quality
+    fig6_efficiency_cost       - Figure 6: Efficiency and economic cost with different LLMs
 """
 
 import os
@@ -46,8 +49,8 @@ def _setup_academic_style():
     })
 
 
-def monthly_permits():
-    """Fig: Monthly permit transaction trend with phishing ratio overlay."""
+def fig2_permit_trend():
+    """Figure 2: The permit transaction trend from 2023 to 2024."""
     _setup_academic_style()
 
     csv_path = os.path.join(ANALYSIS_DIR, 'monthly_permit_deep_analysis.csv')
@@ -64,8 +67,8 @@ def monthly_permits():
 
     fig, ax1 = plt.subplots(figsize=(9, 4.5))
     bar_width = 0.6
-    ax1.bar(periods, normal_tx, label='Benign Txs', color='#C2D6ED', width=bar_width, edgecolor='grey', linewidth=0.5)
-    ax1.bar(periods, phishing_tx, label='Phishing Txs', color='#8B0000', width=bar_width, edgecolor='black', linewidth=0.5)
+    ax1.bar(periods, normal_tx, label='Legitimate Tx', color='#C2D6ED', width=bar_width, edgecolor='grey', linewidth=0.5)
+    ax1.bar(periods, phishing_tx, label='Phishing Tx', color='#8B0000', width=bar_width, edgecolor='black', linewidth=0.5)
     ax1.set_ylabel('Permit Transaction Count', labelpad=10, fontweight='bold')
     ax1.tick_params(axis='x', rotation=20)
     ax1.set_ylim(0, 120000)
@@ -106,56 +109,8 @@ def monthly_permits():
 
 
 
-def combined_feature_bar_chart():
-    """Fig: Diverging bar chart comparing benign vs malicious combined feature hit rates."""
-    _setup_academic_style()
-
-    features = [
-        'Self-Submit\n+ Third-Party Transfer', 'Infinite Allowance\n+ Ghost Spender',
-        'Infinite Time\n+ New Contract', 'Delegated-Submit\n+ Third-Party Transfer',
-        'Infinite Allowance\n+ Zero Utilization',
-    ]
-    benign_pct = [15.80, 3.96, 0.26, 6.54, 16.95]
-    malicious_pct = [2.08, 11.26, 15.40, 71.03, 79.98]
-    benign_vals = [-x for x in benign_pct]
-
-    fig, ax = plt.subplots(figsize=(9, 4))
-    color_benign = '#C2D6ED'
-    color_malic = '#8B0000'
-    height = 0.45
-
-    ax.barh(np.arange(len(features)), benign_vals, height, label='Benign', color=color_benign, edgecolor='white', linewidth=1.5)
-    ax.barh(np.arange(len(features)), malicious_pct, height, label='Malicious', color=color_malic, edgecolor='white', linewidth=1.5)
-    ax.axvline(0, color='#222222', linewidth=1.2, zorder=3)
-
-    xticks = [-20, -10, 0, 20, 40, 60, 80]
-    ax.set_xticks(xticks)
-    ax.set_xticklabels([f"{abs(x)}%" if x != 0 else "0" for x in xticks], fontsize=14)
-    ax.set_xlim(-30, 90)
-    ax.set_yticks(np.arange(len(features)))
-    ax.set_yticklabels(features, fontsize=14)
-
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-    ax.spines['left'].set_visible(False)
-    ax.spines['bottom'].set_color('#cccccc')
-    ax.tick_params(axis='y', length=0, pad=10)
-    ax.grid(axis='x', linestyle='--', alpha=0.4, color='#999999', zorder=0)
-
-    for i, (b_val, m_val) in enumerate(zip(benign_pct, malicious_pct)):
-        ax.annotate(f"{b_val}%", xy=(-b_val, i), xytext=(-6, 0), textcoords="offset points",
-                    ha='right', va='center', fontsize=14, fontweight='bold')
-        ax.annotate(f"{m_val}%", xy=(m_val, i), xytext=(6, 0), textcoords="offset points",
-                    ha='left', va='center', fontsize=14, fontweight='bold')
-
-    ax.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), ncol=2, frameon=False, fontsize=14)
-    plt.tight_layout()
-    plt.savefig(os.path.join(FIGURE_DIR, 'combined_feature_bar.pdf'), dpi=300, bbox_inches='tight')
-    plt.show()
-
-
-def combined_features_dumbbell():
-    """Fig: Dumbbell (Cleveland dot) chart for combined feature comparison."""
+def fig3_cross_stage_semantics():
+    """Figure 3: Analysis of cross-stage semantics (dumbbell chart)."""
     matplotlib.rcParams['font.family'] = 'Times New Roman'
     matplotlib.rcParams['mathtext.fontset'] = 'stix'
     matplotlib.rcParams['axes.unicode_minus'] = False
@@ -186,7 +141,7 @@ def combined_features_dumbbell():
         ax.fill_between([lo, hi], y[i] - band_h, y[i] + band_h, color=fc, alpha=0.12, zorder=1)
         ax.plot([lo, hi], [y[i], y[i]], color=fc, linewidth=2.0, alpha=0.35, zorder=2, solid_capstyle='round')
 
-    ax.scatter(benign, y, color=color_benign, s=90, zorder=4, edgecolors='white', linewidth=1.2, label='Benign')
+    ax.scatter(benign, y, color=color_benign, s=90, zorder=4, edgecolors='white', linewidth=1.2, label='Legitimate')
     ax.scatter(malicious, y, color=color_malicious, s=90, zorder=4, edgecolors='white', linewidth=1.2, marker='D', label='Phishing')
 
     for i, (b, m) in enumerate(zip(benign, malicious)):
@@ -226,8 +181,8 @@ def combined_features_dumbbell():
     plt.show()
 
 
-def quality_of_reports():
-    """Fig: RQ3 evaluation - LLM report quality bar chart with error bars."""
+def fig5_report_quality():
+    """Figure 5: Cross-model consensus evaluation of forensic report quality."""
     _setup_academic_style()
 
     raw_data = {
@@ -278,12 +233,170 @@ def quality_of_reports():
     plt.show()
 
 
+def fig6_efficiency_cost():
+    """Figure 6: Efficiency and economic cost with different LLMs."""
+    import json
+    import matplotlib.gridspec as gridspec
+    import matplotlib.ticker as mticker
+    import matplotlib.colors as mcolors
+    from matplotlib.lines import Line2D
+
+    matplotlib.rcParams.update({
+        'font.family': 'Times New Roman',
+        'mathtext.fontset': 'stix',
+        'axes.unicode_minus': False,
+    })
+
+    SCALE = 2.7
+    COLOR_BLUE = '#2B6DA1'
+    COLOR_RED = '#B82020'
+    MODELS = ["Gemini-3-Flash", "GPT-5.4", "Claude-4.5-Sonnet", "Qwen3-Max", "DeepSeek-V3.2"]
+
+    data_path = os.path.join(BASE_PATH, 'calc_results.json')
+    with open(data_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    cost_order = sorted(MODELS, key=lambda m: data[m]["cost_per_report"]["mean"], reverse=True)
+    y_pos = np.arange(len(cost_order))
+
+    costs = [data[m]["cost_per_report"]["mean"] for m in cost_order]
+    cost_min, cost_max = min(costs), max(costs)
+    cmap = mcolors.LinearSegmentedColormap.from_list('unified', [COLOR_BLUE, COLOR_RED])
+    cnorm = mcolors.LogNorm(vmin=cost_min, vmax=cost_max)
+    model_colors = {m: cmap(cnorm(data[m]["cost_per_report"]["mean"])) for m in MODELS}
+
+    def darken(rgba, factor=0.55):
+        return (rgba[0] * factor, rgba[1] * factor, rgba[2] * factor, 1.0)
+
+    # --- Layout ---
+    fig = plt.figure(figsize=(14, 9.5))
+    gs = gridspec.GridSpec(2, 1, height_ratios=[1.5, 1],
+                           hspace=0.7, left=0.20, right=0.97, top=0.90, bottom=0.16)
+    gs_top = gridspec.GridSpecFromSubplotSpec(
+        1, 4, subplot_spec=gs[0, 0], wspace=0.04, width_ratios=[1, 1, 1, 1])
+
+    # --- (a) Four-zone Range Dot Chart ---
+    zones = [
+        ("prompt_tokens", "Input Tokens"),
+        ("completion_tokens", "Output Tokens"),
+        ("total_tokens", "Total Tokens"),
+        ("reasoning_time", "Reasoning Time (s)"),
+    ]
+    x_cap_map = {"reasoning_time": 40}
+    xlim_map = {
+        "prompt_tokens": (3200, 4100, [3200, 3450, 3700, 3950]),
+        "completion_tokens": (0, 1200, [0, 300, 600, 900]),
+        "total_tokens": (3200, 5000, [3200, 3700, 4200, 4700]),
+        "reasoning_time": (0, 40, [0, 10, 20, 30]),
+    }
+    outlier_idx = 0
+
+    for z_idx, (metric_key, zone_title) in enumerate(zones):
+        ax = fig.add_subplot(gs_top[0, z_idx])
+        ax.set_facecolor('#FAFAFA')
+        x_cap = x_cap_map.get(metric_key)
+
+        for i, m in enumerate(cost_order):
+            s = data[m][metric_key]
+            c = model_colors[m]
+            edge = darken(c, 0.50)
+            vmin, vmed, vmean, vmax = s["min"], s["median"], s["mean"], s["max"]
+            vmax_disp = min(vmax, x_cap) if x_cap else vmax
+
+            ax.plot([vmin, vmax_disp], [y_pos[i]] * 2, '-', color=c,
+                    linewidth=8.0 * SCALE / 1.6, alpha=0.30, solid_capstyle='round')
+            ax.plot(vmin, y_pos[i], '|', color=edge, markersize=11 * SCALE / 1.6, markeredgewidth=2.2)
+            ax.plot(vmax_disp, y_pos[i], '|', color=edge, markersize=11 * SCALE / 1.6, markeredgewidth=2.2)
+            ax.scatter(vmed, y_pos[i], marker='o', c=[c], s=100 * SCALE / 1.6,
+                       edgecolors='black', linewidths=1.1, zorder=6)
+            ax.scatter(vmean, y_pos[i], marker='D', facecolors='white',
+                       edgecolors=[edge], s=65 * SCALE / 1.6, linewidths=1.7, zorder=6)
+
+            if x_cap and vmax > x_cap:
+                y_off = 0.28 if outlier_idx % 2 == 0 else -0.28
+                ax.annotate(f'{vmax:.0f}', xy=(vmax_disp, y_pos[i]),
+                            xytext=(x_cap * 0.88, y_pos[i] + y_off),
+                            fontsize=8 * SCALE, color=edge, fontweight='bold', va='center',
+                            arrowprops=dict(arrowstyle='->', color=edge, lw=0.8,
+                                            connectionstyle='arc3,rad=0.15'))
+                outlier_idx += 1
+
+        ax.set_yticks(y_pos)
+        if z_idx == 0:
+            ax.set_yticklabels(cost_order, fontsize=9 * SCALE, color='black')
+        else:
+            ax.set_yticklabels([])
+            ax.tick_params(axis='y', length=0)
+        ax.invert_yaxis()
+        ax.set_title(zone_title, y=-0.25, fontsize=9 * SCALE, pad=8)
+        ax.grid(axis='both', alpha=0.18, linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        if z_idx > 0:
+            ax.spines['left'].set_linewidth(0.8)
+            ax.spines['left'].set_color('#AAAAAA')
+
+        if metric_key in xlim_map:
+            lo, hi, ticks = xlim_map[metric_key]
+            ax.set_xlim(lo, hi)
+            ax.set_xticks(ticks)
+        ax.tick_params(axis='x', labelsize=8 * SCALE)
+
+    # --- (b) Cost Bar Chart ---
+    ax_c = fig.add_subplot(gs[1, 0])
+    bh = 0.70
+    totals = [data[m]["cost_per_report"]["mean"] for m in cost_order]
+    max_total = max(totals)
+
+    for i, (m, total) in enumerate(zip(cost_order, totals)):
+        c = model_colors[m]
+        ax_c.barh(y_pos[i], total, height=bh, color=c, alpha=0.88,
+                  edgecolor='white', linewidth=0.6)
+        ax_c.text(total + max_total * 0.015, y_pos[i],
+                  f'{total * 1000:.2f}', ha='left', va='center',
+                  fontsize=8 * SCALE, color='black')
+
+    ax_c.set_xlim(0, 0.025)
+    ax_c.tick_params(axis='x', labelsize=8 * SCALE)
+    ax_c.set_yticks(y_pos)
+    ax_c.set_yticklabels(cost_order, fontsize=9 * SCALE, color='black')
+    ax_c.invert_yaxis()
+    ax_c.xaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f'{x * 1000:.1f}'))
+    ax_c.set_xlabel('Cost of 1000 Reports (USD)', fontsize=9 * SCALE, labelpad=10)
+    ax_c.spines['top'].set_visible(False)
+    ax_c.spines['right'].set_visible(False)
+    ax_c.grid(axis='x', alpha=0.2, linestyle='--', linewidth=0.5)
+
+    # --- Global legend & subtitles ---
+    center_x = 0.515
+    legend_handles = [
+        Line2D([0], [0], marker='|', color='#555', markersize=10, markeredgewidth=2.0,
+               linestyle='-', linewidth=6.0, alpha=0.30, label='Min \u2013 Max range'),
+        Line2D([0], [0], marker='o', color='#555', markerfacecolor='#555', markersize=10,
+               linestyle='None', markeredgecolor='black', markeredgewidth=1.0, label='Median'),
+        Line2D([0], [0], marker='D', color='#555', markerfacecolor='white', markersize=9.5,
+               linestyle='None', markeredgecolor='#555', markeredgewidth=1.5, label='Mean'),
+    ]
+    fig.legend(handles=legend_handles, fontsize=9 * SCALE, loc='upper center',
+               bbox_to_anchor=(center_x, 1), ncol=3, framealpha=0.95,
+               edgecolor='#999', fancybox=True, handlelength=2.0, columnspacing=1.8)
+    fig.text(center_x, 0.445, "(a) Token Consumption and Reasoning Time",
+             ha='center', va='center', fontsize=11 * SCALE)
+    fig.text(center_x, 0.025, "(b) Cost of Generating Forensic Reports",
+             ha='center', va='center', fontsize=11 * SCALE)
+
+    plt.savefig(os.path.join(FIGURE_DIR, 'fig6_efficiency_cost.pdf'),
+                facecolor='white', bbox_inches='tight', dpi=300)
+    plt.show()
+
+
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description="Generate paper figures")
-    parser.add_argument("func", nargs="?", default="monthly_permits",
-                        choices=["monthly_permits",
-                                 "combined_feature_bar_chart", "combined_features_dumbbell",
-                                 "quality_of_reports"])
+    parser.add_argument("func", nargs="?", default="fig2_permit_trend",
+                        choices=["fig2_permit_trend",
+                                 "fig3_cross_stage_semantics",
+                                 "fig5_report_quality",
+                                 "fig6_efficiency_cost"])
     args = parser.parse_args()
     globals()[args.func]()

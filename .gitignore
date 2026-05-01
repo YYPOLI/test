@@ -52,6 +52,7 @@ generate_test_dataset.py
 etherscan_nametag.py
 print_figures.py
 plot_combined_features.py
+RQ3_plot.py
 spider_history&token_info.py
 
 # Paper manuscript

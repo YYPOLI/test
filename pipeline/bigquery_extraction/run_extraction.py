@@ -1,7 +1,7 @@
 """
 PermitGuard - Stage 1: BigQuery extraction (Section 4.1).
 
-Executes BQ_Permit_TFList_0117.sql against Google BigQuery and saves the
+Executes permit_traces_query.sql against Google BigQuery and saves the
 result as a local JSONL file under data/raw_traces/, ready for the
 Stage 2 data processor (pipeline/data_processing/data_processor.py).
 
@@ -37,7 +37,7 @@ PROJECT_ID = os.getenv("GCP_PROJECT_ID", "")
 PIPELINE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = PIPELINE_DIR.parents[1]
 
-SQL_FILE = PIPELINE_DIR / "BQ_Permit_TFList_0117.sql"
+SQL_FILE = PIPELINE_DIR / "permit_traces_query.sql"
 OUTPUT_DIR = PROJECT_ROOT / "data" / "pipeline_output" / "raw_traces"
 OUTPUT_FILE = OUTPUT_DIR / "permit_traces.jsonl"
 

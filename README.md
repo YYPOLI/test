@@ -1,6 +1,6 @@
-# PermitGuard
+# What You Expect Isn't What You Sign: Interpretable Detection of Ethereum Permit Phishing via Semantic Consistency
 
-This repository contains the artifacts for the paper: **"What You Expect Isn't What You Sign: Interpretable Detection of Ethereum Permit Phishing via Semantic Consistency"**, to appear at CCS 2026.
+This repository contains the artifacts for the paper: **"What You Expect Isn't What You Sign: Interpretable Detection of Ethereum Permit Phishing via Semantic Consistency"**, submitted to CCS 2026.
 
 PermitGuard is an interpretable neuro-symbolic framework that detects ERC-20 permit phishing attacks by verifying *cross-stage semantic consistency* among submitter profile, permit intent, and state transitions. It transforms inconsistencies into invariant decision signals and guides LLM-based cognitive reasoning under strict state constraints to achieve robust, zero-shot detection with faithful forensic reports.
 
@@ -23,7 +23,7 @@ PermitGuard/
 │
 ├── pipeline/                        # Data construction pipeline (§4.1)
 │   ├── bigquery_extraction/         # Stage 1: permit trace extraction from BigQuery
-│   │   ├── BQ_Permit_TFList_0117.sql
+│   │   ├── permit_traces_query.sql
 │   │   └── run_extraction.py
 │   ├── data_processing/             # Stage 2: cleaning, deduplication, parsing
 │   │   ├── data_processor.py
@@ -130,10 +130,10 @@ Reads the audit report and outputs F1-Score, Precision, Recall, and FPR to the c
 ### Generate Paper Figures
 
 ```bash
-python visualization/plot_figures.py monthly_permits
-python visualization/plot_figures.py combined_features_dumbbell
-python visualization/plot_figures.py combined_feature_bar_chart
-python visualization/plot_figures.py quality_of_reports
+python visualization/plot_figures.py fig2_permit_trend
+python visualization/plot_figures.py fig3_cross_stage_semantics
+python visualization/plot_figures.py fig5_report_quality
+python visualization/plot_figures.py fig6_efficiency_cost
 ```
 
 Figures are saved as PDF/PNG to `result/figures/`.
@@ -179,18 +179,6 @@ All pipeline outputs are isolated under `data/pipeline_output/` (gitignored) and
 | 4+. Token Metadata | `token_metadata_crawler.py` | CoinGecko API + Ethereum RPC | `pipeline_output/token_metadata/` |
 | D_eval Generation | `build_test_dataset.py` | Cleaned CSVs + label library | `data/test_dataset/` |
 | Analysis Stats | `build_analysis_stats.py` | Cleaned CSVs + label library | `data/analysis_stats/` |
-
-## Citation
-
-```bibtex
-@inproceedings{permitguard2026,
-  title     = {What You Expect Isn't What You Sign: Interpretable Detection of
-               Ethereum Permit Phishing via Semantic Consistency},
-  booktitle = {Proceedings of the 2026 ACM SIGSAC Conference on Computer and
-               Communications Security (CCS '26)},
-  year      = {2026}
-}
-```
 
 ## Contact
 
