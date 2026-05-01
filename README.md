@@ -111,7 +111,7 @@ The repository ships with pre-computed datasets under `data/`, so you can run de
 >
 > This fetches historical transactions from Etherscan for each spender address in the test dataset. An `ETHERSCAN_API_KEY` in `.env` is required (free tier: 5 calls/sec). The crawling takes approximately 2–4 hours depending on network speed.
 
-### Run Detection (~10 min for 10 transactions)
+### Run Detection
 
 ```bash
 python evaluation/run_detection.py

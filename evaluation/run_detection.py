@@ -35,7 +35,7 @@ def main():
 
     try:
         df = pd.read_csv(CONFIG["PATHS"]["PARSED_DATASET"])
-        df = df.iloc[0:10]
+        df = df.iloc[0:1000]
         print(f"Loaded {len(df)} transactions for audit.")
     except Exception as e:
         print(f"Data loading failed: {e}")
