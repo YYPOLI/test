@@ -1,0 +1,2 @@
+txHash,blockNumber,timeStamp,from,to,value,contractAddress,input,type,gas,gasUsed,isError
+0x9fdc7cd04cff583ea615debe69a4655b98e475f3b602406c431d5e20f7f30109,20921702,1728400631,0xed0e416e0feea5b484ba5c95d375545ac2b60572,,0.0,0xbbb92d7d11515b6faeb0937bf4e35fce9cfd532f,,create2,2505132,493575,0

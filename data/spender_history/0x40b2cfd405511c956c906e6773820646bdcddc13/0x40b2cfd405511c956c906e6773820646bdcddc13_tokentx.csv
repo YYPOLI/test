@@ -1,0 +1,2 @@
+txHash,blockNumber,timeStamp,nonce,from,contractAddress,to,value,tokenName,tokenSymbol,tokenDecimal,transactionIndex,gas,gasPrice,gasUsed,cumulativeGasUsed,input,methodId,functionName
+0xcda5e3dd26a39b29150237cfd839fb3dd552fd2f03ab8008504c55a17924ad86,21877341,1739930975,257,0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43,0x9dc9752f0dabf08b62ac8c84e5d26d055574e171,0x40b2cfd405511c956c906e6773820646bdcddc13,11688.0,,NC-Eligible (Verify: https://nodecoin.claims),18,68,1591944,836198905,1564770,17343899,deprecated,0xd43a632f,reward(address[] _addressList)

@@ -40,7 +40,7 @@ CONFIG = {
             "labeled_address/labeled_addresses.csv",
             "BigQuery_since20251230/new_data_0117/cleaned_data/labeled_address/all_labeled_address_883071.csv"),
         "HISTORY_DIR": _resolve(
-            "pipeline_output/spender_history",
+            "spender_history",
             "verified_permit/labeled_address/1_order_0609"),
         "SPENDER_FEATURES": _resolve(
             "feature_profiles/spender_features.csv",

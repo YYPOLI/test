@@ -1,0 +1,2 @@
+txHash,blockNumber,timeStamp,nonce,from,contractAddress,to,value,tokenName,tokenSymbol,tokenDecimal,transactionIndex,gas,gasPrice,gasUsed,cumulativeGasUsed,input,methodId,functionName
+0x137eabd6464d4d88c147a08efb16707144a7a1e836b30d15ff06bd06be5636ef,21090934,1730441663,9493,0x78f01056c28cd1e219270e61a16bd18a87f77711,0x306fd3e7b169aa4ee19412323e1a5995b8c1a1f4,0x792a1f77cfeb3d2c7203b8dadef70162948fea67,2222222.0,Black Agnus,FTW,18,28,79792,4736237981,52404,2116514,deprecated,0xa9059cbb,"transfer(address _to, uint256 _value)"
