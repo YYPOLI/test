@@ -23,7 +23,14 @@ class SemanticAligner:
 
     @staticmethod
     def mask_labels(safe_facts: dict) -> dict:
-        """Blind malicious labels to force the LLM to reason on behavioral semantics only."""
+        """
+        Generate desensitized state O_mask = MASK(O) (§5.4).
+        Masks malicious labels (Label 1 / Phishing) to prevent LLM from taking
+        shortcuts based on known blacklist hits. Benign labels (Label 2) from
+        the address label library are retained as part of the external knowledge
+        K provided by the Context Retriever, serving as safe-harbor anchors for
+        downstream constraint computation.
+        """
         entities = safe_facts.get('entities', {})
         exec_info = safe_facts.get('execution_forensics', {})
 
@@ -63,80 +70,83 @@ class SemanticAligner:
         addr_transfer_to = exec_info.get('transfer_to', '').lower()
         token_symbol = intent_info.get('token_symbol', 'Unknown')
 
-        # --- Submitter Profiling ---
-        sb_total_txs = sb_info.get('total_txs', 0)
-        sb_unique_owners = sb_info.get('unique_owners', 0)
+        # ===== Phase 1: Submitter Profiling (Algorithm 1, Lines 4-7) =====
+        # V_sub = <Freq_tx, Freq_LP, N_owners>
+        Freq_tx = sb_info.get('total_txs', 0)
+        Freq_LP = sb_info.get('feat_lp_token', 0)
+        N_owners = sb_info.get('N_owners', 0)
         sb_ratio_mediated = sb_info.get('ratio_mediated', 0.5)
         sb_high_value_rate = sb_info.get('sb_high_value_ratio', 0.6)
-        lp_withdrawal_count = sb_info.get('feat_lp_token', 0)
         unique_lp_tokens = sb_info.get('unique_lp_tokens', 0)
 
-        is_high_freq_porter = (sb_total_txs > 10) or (sb_unique_owners > 5)
+        is_high_freq_porter = (Freq_tx > 10) or (N_owners > 5)
         is_self_submit = (sb_info.get('relationship_to_owner') == 'Self (Owner)')
-        is_malicious_sweeping = (lp_withdrawal_count > 1.5) and (sb_info.get('label_submitter') != 2)
+        is_malicious_sweeping = (Freq_LP > 1.5) and (sb_info.get('label_submitter') != 2)
 
-        # --- Intent Quantification ---
+        # ===== Phase 2: Intent Quantification (Algorithm 1, Lines 8-10) =====
+        # GhostSpender, ΔT, E_risk
+        GhostSpender = sp_info.get('is_ghost', False)
+
         intent_risk = intent_info.get('risk_flags', {})
-        is_long_term = intent_risk.get('is_infinite_time', False)
+        is_infinite_time = intent_risk.get('is_infinite_time', False)
+        is_infinite_amount = intent_risk.get('is_infinite_amount', False)
         is_junk_asset = (token_symbol == 'Unknown')
-        is_infinite = intent_risk.get('is_infinite_amount', False)
 
-        utilization = exec_info.get('permit_transfer_ratio', 0.0)
-        if isinstance(utilization, str) and '%' in utilization:
+        rho = exec_info.get('permit_transfer_ratio', 0.0)
+        if isinstance(rho, str) and '%' in rho:
             try:
-                utilization = float(utilization.strip('%')) / 100.0
+                rho = float(rho.strip('%')) / 100.0
             except Exception:
-                utilization = 0.0
+                rho = 0.0
 
-        is_harvesting_signal = is_infinite and (utilization < 0.001)
+        is_harvesting_signal = is_infinite_amount and (rho < 0.001)
 
-        # --- State Transition Verification ---
+        # ===== Phase 3: State Transition Verification (Algorithm 1, Lines 11-15) =====
+        # V_exp = {Owner, Spender, Submitter, Relayer, TokenContract}
+        V_exp = {addr_owner, addr_spender, addr_submitter, addr_relayer, addr_token}
+        TopologyLeak = (addr_transfer_to not in V_exp) and (addr_transfer_to != '')
+
         is_solver_settlement = (addr_transfer_to == addr_relayer) or (addr_transfer_to == addr_submitter)
 
         tf_label = exec_info.get('label_transfer_to', 0)
-        is_leakage_raw = (
-            addr_transfer_to != addr_spender and
-            addr_transfer_to != addr_owner and
-            addr_transfer_to != addr_submitter and
-            addr_transfer_to != addr_relayer and
-            addr_transfer_to != addr_token and
-            addr_transfer_to != ''
-        )
-        is_leakage_risk = is_leakage_raw and (tf_label != 2)
+        TopologyLeak_risk = TopologyLeak and (tf_label != 2)
 
-        is_ghost = sp_info.get('is_ghost', False)
-
-        # --- Cross-stage Combinatorial Constraints ---
-        combo_dormant = is_long_term and is_ghost
-        combo_relayed_theft = (not is_self_submit) and is_leakage_risk
-        combo_self_routed = is_self_submit and is_leakage_risk
+        # ===== Phase 4: Cross-stage Semantic Constraint Ψ (Algorithm 1, Line 16) =====
+        # O = Ψ(V_sub, GhostSpender, ΔT, E_risk, ρ, TopologyLeak)
+        combo_dormant = is_infinite_time and GhostSpender
+        combo_relayed_theft = (not is_self_submit) and TopologyLeak_risk
+        combo_self_routed = is_self_submit and TopologyLeak_risk
 
         return {
-            "STEP_A_SUBMITTER": {
+            "Phase1_SubmitterProfiling": {
                 "is_malicious_sweeping": is_malicious_sweeping,
                 "is_self_submit": is_self_submit,
                 "is_high_freq_porter": is_high_freq_porter,
-                "stats": {
-                    "lp_withdrawal_count": lp_withdrawal_count,
+                "V_sub": {
+                    "Freq_tx": Freq_tx,
+                    "Freq_LP": Freq_LP,
+                    "N_owners": N_owners,
                     "unique_lp_tokens": unique_lp_tokens,
-                    "unique_owners": sb_unique_owners,
                     "handling_rate": sb_ratio_mediated,
                     "high_value_rate": sb_high_value_rate,
                 },
             },
-            "STEP_B_INTENT": {
-                "is_infinite_value": is_infinite,
-                "is_long_term_risk": is_long_term,
+            "Phase2_IntentQuantification": {
+                "GhostSpender": GhostSpender,
+                "is_infinite_amount": is_infinite_amount,
+                "is_infinite_time": is_infinite_time,
                 "is_junk_asset": is_junk_asset,
                 "is_harvesting_signal": is_harvesting_signal,
                 "details": {
                     "validity_days": intent_info.get('validity_period'),
-                    "utilization_rate": utilization,
+                    "rho": rho,
                 },
             },
-            "STEP_C_EXECUTION": {
+            "Phase3_StateTransition": {
                 "is_solver_settlement": is_solver_settlement,
-                "is_leakage_risk": is_leakage_risk,
+                "TopologyLeak": TopologyLeak_risk,
+            },
+            "Phase4_CrossStageConstraint": {
                 "combo_dormant_trap": combo_dormant,
                 "combo_relayed_theft": combo_relayed_theft,
                 "combo_self_routed": combo_self_routed,
@@ -144,10 +154,11 @@ class SemanticAligner:
         }
 
 
-class PermitGuardAuditor:
+class ConstrainedInferencer:
     """
-    Cognitive Reasoner: guides LLM to perform zero-shot detection under
-    deterministic factual constraints through state-machine-controlled reasoning.
+    Constrained Inferencer (§5.4): guides LLM to perform zero-shot detection
+    under deterministic factual constraints through state-machine-controlled
+    reasoning and evidence stacking paradigm (Eq. 3).
     """
 
     def __init__(self):

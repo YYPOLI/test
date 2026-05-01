@@ -2,16 +2,20 @@ import pandas as pd
 from typing import Dict, Any
 
 from src.utils.config import CONFIG
-from src.permit_parser.context_retriever import KnowledgeBase
-from src.permit_parser.trace_fetcher import ForensicsAnalyzer
+from src.permit_parser.context_retriever import ContextRetriever
+from src.permit_parser.trace_fetcher import TraceFetcher
 
 
-class DeepFactEnricher:
-    """Transforms raw transaction rows into enriched fact sheets with statistical significance."""
+class PayloadDecoder:
+    """
+    Payload Decoder (§5.2): restores the content authorized by users.
+    Performs the decoding mapping D: B* → M, reconstructing the core structured
+    field set M = {Owner, Spender, Value, Deadline} from the complex byte stream.
+    """
 
     def __init__(self):
-        self.kb = KnowledgeBase()
-        self.forensics = ForensicsAnalyzer(CONFIG["PATHS"]["HISTORY_DIR"])
+        self.kb = ContextRetriever()
+        self.forensics = TraceFetcher(CONFIG["PATHS"]["HISTORY_DIR"])
 
     def enrich(self, raw_row: pd.Series) -> Dict[str, Any]:
         tx_hash = raw_row.get('tx_hash', '')
@@ -41,7 +45,7 @@ class DeepFactEnricher:
             "nametag_submitter": sb_profile.get("nametag", 0),
             "relationship_to_owner": "Self (Owner)" if is_self_submitted else "Third-Party (Relayer/Worker)",
             "total_txs": sb_profile.get("total_txs", 0),
-            "unique_owners": sb_profile.get("unique_victims", 0),
+            "N_owners": sb_profile.get("unique_victims", 0),
             "unique_spenders": sb_profile.get("unique_spenders", 0),
             "ratio_mediated": round(sb_profile.get("ratio_mediated", 0), 4),
             "sb_high_value_ratio": round(sb_profile.get("ratio_high_value", 0), 4),

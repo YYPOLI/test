@@ -1,0 +1,751 @@
+id,symbol,name,current_price,market_cap,contract_address,decimals
+bitcoin,btc,Bitcoin,77041.0,1542250740754,N/A,
+ethereum,eth,Ethereum,2279.59,275094218066,N/A,
+tether,usdt,Tether,0.999529,189480373199,0xdac17f958d2ee523a2206206994597c13d831ec7,6.0
+ripple,xrp,XRP,1.38,84819606128,N/A,
+binancecoin,bnb,BNB,617.04,83147309861,0xb8c77482e45f1f44de1745f52c74426c631bdd52,
+usd-coin,usdc,USDC,0.99964,77165807667,0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48,
+solana,sol,Solana,83.85,48292135290,N/A,
+tron,trx,TRON,0.3259,30888303702,N/A,
+figure-heloc,figr_heloc,Figure Heloc,1.031,17799756110,N/A,
+dogecoin,doge,Dogecoin,0.108798,16749492786,N/A,
+whitebit,wbt,WhiteBIT Coin,57.74,12321974200,0x925206b8a707096ed26ae47c84747fe0bb734f59,8.0
+usds,usds,USDS,0.999761,11162609904,0xdc035d45d973e3ec169d2276ddab16f1e407384f,
+hyperliquid,hype,Hyperliquid,40.35,9616530833,N/A,
+leo-token,leo,LEO Token,10.31,9497049115,0x2af5d2ad76741191d15dfe7bf6ac92d4bd912ca3,18.0
+cardano,ada,Cardano,0.249084,9207222664,N/A,
+bitcoin-cash,bch,Bitcoin Cash,444.34,8895612749,N/A,
+monero,xmr,Monero,382.7,7056022214,N/A,
+chainlink,link,Chainlink,9.16,6659695478,0x514910771af9ca656af840dff83e8264ecf986ca,
+zcash,zec,Zcash,348.31,5811808138,N/A,
+canton-network,cc,Canton,0.150695,5788928437,N/A,
+stellar,xlm,Stellar,0.159521,5319329348,N/A,
+usd1-wlfi,usd1,USD1,0.99973,4497590269,0x8d0d000ee44948fc98c9b98a4fa4921476f08b0d,
+dai,dai,Dai,0.999716,4393164588,0x6b175474e89094c44da98b954eedeac495271d0f,18.0
+litecoin,ltc,Litecoin,55.38,4269155197,N/A,
+memecore,m,MemeCore,3.19,4139282815,N/A,
+avalanche-2,avax,Avalanche,9.13,3942137384,N/A,
+ethena-usde,usde,Ethena USDe,0.999053,3895238556,0x4c9edd5852cd905f086c759e8383e09bff1e68b3,
+hedera-hashgraph,hbar,Hedera,0.088105,3821023715,N/A,
+rain,rain,Rain,0.00789281,3775829745,N/A,
+shiba-inu,shib,Shiba Inu,6.37e-06,3746774120,0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce,
+sui,sui,Sui,0.917398,3626556517,N/A,
+paypal-usd,pyusd,PayPal USD,0.99983,3382711543,0x6c3ea9036406852006290770bedfcaba0e23a0e8,
+the-open-network,ton,Toncoin,1.33,3368693327,0x582d872a1b094fc48f5de31d3b73f2d9be47def1,
+crypto-com-chain,cro,Cronos,0.068259,2973606891,0xa0b73e1ff0b80914ab6fe0444e65848c4c34450b,8.0
+hashnote-usyc,usyc,Circle USYC,1.12,2920195380,0x136471a34f6ef19fe571effc1ca711fdb8e49f2b,
+tether-gold,xaut,Tether Gold,4598.83,2724748381,0x68749665ff8d2d112fa859aa293f07a622782f38,6.0
+global-dollar,usdg,Global Dollar,0.999809,2462789553,0xe343167631d89b6ffc58b88d6b7fb0228795491d,6.0
+bittensor,tao,Bittensor,253.76,2436439089,N/A,
+blackrock-usd-institutional-digital-liquidity-fund,buidl,BlackRock USD Institutional Digital Liquidity Fund,1.0,2282337755,0x7712c34205737192402172409a8f7ccef8aa2aec,6.0
+pax-gold,paxg,PAX Gold,4600.99,2204951538,0x45804880de22913dafe09f4980848ece6ecbaf78,18.0
+mantle,mnt,Mantle,0.630457,2081898724,0x3c3a81e81dc49a522a592e7622a7e711c06bf354,
+polkadot,dot,Polkadot,1.21,2039623856,0x8d010bf9c26881788b4e6bf5fd1bdc358c8f90b8,
+uniswap,uni,Uniswap,3.22,2039009633,0x1f9840a85d5af5bf1d1762f925bdaddc4201f984,
+world-liberty-financial,wlfi,World Liberty Financial,0.06098,1936966392,0xda5e1988097297dcdc1f90d4dfe7909e847cbef6,18.0
+sky,sky,Sky,0.08143,1888713195,0x56072c95faa701256059aa122697b133aded9279,
+pi-network,pi,Pi Network,0.180385,1869513374,N/A,
+falcon-finance,usdf,Falcon USD,0.996913,1783997342,0xfa2b947eec368f42195f24f36d2af29f7c24cec2,18.0
+okb,okb,OKB,83.12,1745401174,0x75231f58b43240c9718dd58b4967c5114342a86c,18.0
+near,near,NEAR Protocol,1.31,1692125119,N/A,
+aster-2,aster,Aster,0.653909,1685050038,N/A,
+pepe,pepe,Pepe,3.96e-06,1663320668,0x6982508145454ce325ddbe47a25d4ec3d2311933,
+htx-dao,htx,HTX DAO,1.83e-06,1655807989,0x61ec85ab89377db65762e234c946b5c25a56e99e,
+usdd,usdd,USDD,0.999666,1462897400,0x4f8e5de400de08b164e7421b3ee387f461becd1a,
+ripple-usd,rlusd,Ripple USD,0.999687,1457079994,0x8292bb45bf1ee4d140127049757c2e0ff06317ed,
+aave,aave,Aave,93.15,1413814182,0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9,18.0
+bitget-token,bgb,Bitget Token,2.01,1405403560,0x54d2252757e1672eead234d27b1270728ff90581,
+ondo-us-dollar-yield,usdy,Ondo US Dollar Yield,1.13,1325121684,0x96f6ef951840721adbf46ac996b59e0235cb985c,
+internet-computer,icp,Internet Computer,2.39,1320639863,0x00f3c42833c3170159af4e92dbb451fb3f708917,
+janus-henderson-anemoy-treasury-fund,jtrsy,Janus Henderson Anemoy Treasury Fund,1.1,1318633472,N/A,
+bfusd,bfusd,BFUSD,0.998502,1318152646,N/A,
+ethereum-classic,etc,Ethereum Classic,8.39,1313080614,N/A,
+ondo-finance,ondo,Ondo,0.267773,1304270045,0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3,
+morpho,morpho,Morpho,1.99,1204414072,0x58d97b57bb95320f9a05dc918aef65434969c2b2,
+kucoin-shares,kcs,KuCoin,8.49,1142163629,N/A,
+united-stables,u,United Stables,0.999843,1027700081,0xce24439f2d9c6a2289f741120fe202248b666666,
+polygon-ecosystem-token,pol,POL (ex-MATIC),0.094573,1006042004,0x455e53cbb86018ac2b8092fdcd39d8444affc3f6,18.0
+quant-network,qnt,Quant,69.17,1005946395,0x4a220e6096b25eadb88358cb44068a3248254675,18.0
+eutbl,eutbl,Spiko EU T-Bills Money Market Fund,1.23,986535845,0xa0769f7a8fc65e47de93797b4e21c073c117fc80,
+algorand,algo,Algorand,0.109712,976751619,N/A,
+superstate-short-duration-us-government-securities-fund-ustb,ustb,Superstate Short Duration U.S. Government Securities Fund (USTB),11.07,968834846,0x43415eb6ff9db7e26a15b704e7a3edce97d31c4e,
+blockchain-capital,bcap,Blockchain Capital,105.75,963605738,N/A,
+cosmos,atom,Cosmos Hub,1.89,957373203,N/A,
+ethena,ena,Ethena,0.10385,909540362,0x57e114b691db790c35207b2e685d4a43181e6061,18.0
+nexo,nexo,NEXO,0.900687,900490470,0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206,
+kaspa,kas,Kaspa,0.03261931,892872093,N/A,
+render-token,render,Render,1.69,875540284,0x6de037ef9ad2725eb40118bb1702ebb27e4aeb24,18.0
+aptos,apt,Aptos,1.044,841980698,N/A,
+gatechain-token,gt,Gate,7.26,818002816,0xe66747a101bff2dba3697199dcce5b743b454759,18.0
+worldcoin-wld,wld,Worldcoin,0.242638,802463227,0x163f8c2467924be0ae7b5347228cabf260318753,18.0
+arbitrum,arb,Arbitrum,0.125964,774267133,0xb50721bcf8d664c30412cfbc6cf7a15145234ad1,18.0
+just,jst,JUST,0.089327,763723916,N/A,
+stable-2,stable,​​Stable,0.03344578,744988991,N/A,
+filecoin,fil,Filecoin,0.932911,723636775,N/A,
+pump-fun,pump,Pump.fun,0.00180014,648899942,N/A,
+flare-networks,flr,Flare,0.00749486,643913817,N/A,
+pudgy-penguins,pengu,Pudgy Penguins,0.00992336,623494009,0x6418c0dd099a9fda397c766304cdd918233e8847,
+beldex,bdx,Beldex,0.079751,617108057,0x6ad12e761b438bea3ea09f6c6266556bb24c2181,
+jupiter-exchange-solana,jup,Jupiter,0.183871,610793067,N/A,
+ousg,ousg,OUSG,115.09,610423966,0x1b19c19393e2d034d8ff31ff34c81252fcbbee92,
+vechain,vet,VeChain,0.00708126,607887411,N/A,
+xdce-crowd-sale,xdc,XDC Network,0.02953707,589137159,N/A,
+usdtb,usdtb,USDtb,1.0,585236394,0xc139190f447e929f090edeb554d95abb8b18ac1c,
+gho,gho,GHO,0.9996,583766001,0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f,
+hash-2,hash,Provenance Blockchain,0.01102826,578583255,N/A,
+usual-usd,usd0,Usual USD,0.998984,558568823,0x73a15fed60bf67631dc6cd7bc5b6e8da8190acf5,
+official-trump,trump,Official Trump,2.38,554490743,N/A,
+bonk,bonk,Bonk,6.25e-06,549649745,0x1151cb3d861920e07a38e03eead12c32178567f6,5.0
+midnight-3,night,Midnight,0.03277097,544237030,N/A,
+dexe,dexe,DeXe,11.37,531912338,0xde4ee8057785a7e8e800db58f9784845a5c2cbd6,18.0
+ylds,ylds,YLDS,0.999978,530042180,N/A,
+true-usd,tusd,TrueUSD,0.999249,494210918,0x0000000000085d4780b73119b644ae5ecd22b376,
+a7a5,a7a5,A7A5,0.01244248,487813566,0x6fa0be17e4bea2fcfa22ef89bf8ac9aab0ab0fc9,6.0
+siren-2,siren,Siren,0.663,482006006,N/A,
+pancakeswap-token,cake,PancakeSwap,1.45,475354909,0x152649ea73beab28c5b49b26eb48f7ead6d4c898,
+virtual-protocol,virtual,Virtuals Protocol,0.700608,459864690,0x44ff8620b8ca30902395a7bd3f2407e1a091bf73,18.0
+dash,dash,Dash,35.61,451585337,N/A,
+fetch-ai,fet,Artificial Superintelligence Alliance,0.198136,447423190,0xaea46a60368a7bd060eec7df8cba43b7ef41ad85,
+euro-coin,eurc,EURC,1.17,435453279,0x1abaea1f7c830bd89acc67ec4af516284b1bc33c,
+chiliz,chz,Chiliz,0.04180236,432333868,0x3506424f91fd33084466f402d5d97f05f8e3b4af,
+edgex,edge,edgeX,1.23,431685976,0xb0076de78dc50581770bba1d211ddc0ad4f2a241,18.0
+aerodrome-finance,aero,Aerodrome Finance,0.460469,428227137,N/A,
+adi-token,adi,ADI,4.07,423280188,0x8b1484d57abbe239bb280661377363b03c89caea,
+terra-luna,lunc,Terra Luna Classic,7.577e-05,418318426,N/A,
+blockstack,stx,Stacks,0.223183,411372100,N/A,
+janus-henderson-anemoy-aaa-clo-fund,jaaa,Janus Henderson Anemoy AAA CLO Fund,1.031,403654864,N/A,
+first-digital-usd,fdusd,First Digital USD,0.998678,402341456,0xc5f0f7b66764f6ec8c8dff7ba683102295e16409,
+venice-token,vvv,Venice Token,8.72,398695811,N/A,
+tezos,xtz,Tezos,0.366532,396736382,N/A,
+sei-network,sei,Sei,0.057732,388677821,N/A,
+usx,usx,USX,0.999549,378652661,N/A,
+layerzero,zro,LayerZero,1.44,363782372,0x6985884c4392d348587b19cb9eaaf157f13271cd,18.0
+skyai,skyai,SkyAI,0.363429,361610270,N/A,
+megausd,usdm,MegaUSD,1.0,360641318,N/A,
+kinesis-gold,kau,Kinesis Gold,149.58,356926199,0x14dab79fd7b7b3f748d434812fd6a9aac460ea52,18.0
+curve-dao-token,crv,Curve DAO,0.236478,356601477,0xd533a949740bb3306d119cc777fa900ba034cd52,
+sun-token,sun,Sun Token,0.01846048,354623643,N/A,
+humanity,h,Humanity,0.193128,352413791,0xcf5104d094e3864cfcbda43b82e1cefd26a016eb,
+monad,mon,Monad,0.0295479,349415594,N/A,
+injective-protocol,inj,Injective,3.48,347949267,0xe28b3b32b6c345a34ff64674606124dd5aceca30,18.0
+spx6900,spx,SPX6900,0.373239,347372400,0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c,
+manadia,umxm,Manadia,1.65,346627224,N/A,
+ether-fi,ethfi,Ether.fi,0.413679,345692101,0xfe0c30065b384f05761f15d0cc899d4f9f9cc0eb,
+bianrensheng,币安人生,币安人生 (BinanceLife),0.341485,341507762,N/A,
+zebec-network,zbcn,Zebec Network,0.00337759,330878010,N/A,
+gnosis,gno,Gnosis,123.7,326558096,0x6810e776880c02933d47db1b9fc05908e5386b96,18.0
+hastra-prime,prime,PRIME,1.034,326341218,N/A,
+celestia,tia,Celestia,0.357424,325776503,N/A,
+decred,dcr,Decred,18.33,318363575,N/A,
+bitcoin-cash-sv,bsv,Bitcoin SV,15.87,317857754,N/A,
+floki,floki,FLOKI,3.277e-05,316069736,0xcf0c122c6b73ff809c693db761e7baebe62b6a2e,
+bittorrent,btt,BitTorrent,3.18651e-07,314494472,0xc669928185dbce49d2230cc9b0979be6dc797957,
+apenft,nft,AINFT,3.16432e-07,313330866,0x198d14f2ad9ce69e76ea330b374de4957c3f850a,
+lido-dao,ldo,Lido DAO,0.367811,312271728,0x5a98fcbea516cf06857215779fd812ca3bef1b32,
+conflux-token,cfx,Conflux,0.059692,309600664,N/A,
+usdgo,usdgo,USDGO,0.999798,301961222,N/A,
+olympus,ohm,Olympus,19.09,298651594,0x64aa3364f17a4d01c6f1751fd97c2bd3d7e7f1d5,9.0
+crvusd,crvusd,crvUSD,0.999879,287473549,0xf939e0a03fb07f59a73314e73794be0e57ac1b4e,18.0
+doublezero,2z,DoubleZero,0.082032,284676080,N/A,
+ape-and-pepe,apepe,Ape and Pepe,1.35e-06,283047040,N/A,
+jasmycoin,jasmy,JasmyCoin,0.00569109,281614585,0x7420b4b9a0110cdc71fb720908340c03f9bc03ec,
+kinesis-silver,kag,Kinesis Silver,74.35,280836720,0x56ba8b58b7d1f6d384a1c4dd553f39ebc8741b8e,
+syrup,syrup,Maple Finance,0.238396,276432773,0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66,
+frax,frax,Legacy Frax Dollar,0.998817,275605186,0x853d955acef822db058eb8505911ed77f175b99e,18.0
+pyth-network,pyth,Pyth Network,0.04712247,270952890,N/A,
+kaia,kaia,Kaia,0.04567556,267144379,N/A,
+optimism,op,Optimism,0.122541,263459575,N/A,
+the-graph,grt,The Graph,0.02435273,263112759,0xc944e90c64b2c07662a292be6244bdf05cda44a7,
+kite-2,kite,Kite,0.14346,258310402,0x904567252d8f48555b7447c67dca23f0372e16be,
+apxusd,apxusd,apxUSD,0.999783,256644493,0x98a878b1cd98131b271883b390f68d2c90674665,
+usdai,usdai,USDai,0.999848,248277182,0x0b2b2b2076d95dda7817e785989fe353fe955ef9,18.0
+pendle,pendle,Pendle,1.47,247549508,0x808507121b80c02388fad14726482e061b8da827,
+lido-earn-eth,earneth,Lido Earn ETH,2291.95,244855393,0xbbfc8683c8fe8cf73777fede7ab9574935fea0a4,
+iota,iota,IOTA,0.054748,241911395,N/A,
+reallink,real,RealLink,0.074425,239421800,N/A,
+axie-infinity,axs,Axie Infinity,1.39,236422427,0xbb0e17ef65f82ab018d8edd776e8dd940327b28b,18.0
+compound-governance-token,comp,Compound,24.32,235106873,0xc00e94cb662c3520282e6f5717214004a7f26888,
+plasma,xpl,Plasma,0.092768,232704395,N/A,
+ethereum-name-service,ens,Ethereum Name Service,6.04,232672852,0xc18360217d8f7ab5e7c516566761ea12ce7f9d72,18.0
+starknet,strk,Starknet,0.03931337,231760244,0xca14007eff0db1f8135f4c25b34de49ab0d42766,18.0
+ethgas-2,gwei,ETHGas,0.10909,229003306,0x2798b1cc5a993085e8a9d46e80499f1b63f42204,
+lighter,lit,Lighter,0.889185,222266519,0x232ce3bd40fcd6f80f3d55a522d03f25df784ee2,18.0
+raydium,ray,Raydium,0.814559,218783044,N/A,
+usda-2,usda,USDa,0.984361,217235955,0x8a60e489004ca22d775c5f2c657598278d17d9c2,
+agora-dollar,ausd,AUSD,0.999704,216408237,0x00000000efe302beaa2b3e6e1b18d08d69a9012a,
+the9bit,9bit,The9bit,0.02619212,214719524,N/A,
+undeads-games,uds,Undeads Games,1.66,206514463,0x712bd4beb54c6b958267d9db0259abdbb0bff606,
+chain-2,xcn,Onyxcoin,0.00539448,204048452,0xa2cd3d43c775978a96bdbf12d733d5a1ed94fb18,
+telcoin,tel,Telcoin,0.00213134,202773293,0x467bccd9d29f223bce8043b84e8c8b282827790f,
+tradable-na-rent-financing-platform-sstn,pc0000031,Tradable NA Rent Financing Platform SSTN,1.0,202500000,N/A,
+fartcoin,fartcoin,Fartcoin,0.202339,202219392,N/A,
+theta-token,theta,Theta Network,0.196651,196586386,N/A,
+the-sandbox,sand,The Sandbox,0.072404,193115033,0x3845badade8e6dff049820680d1f14bd3903a5d0,18.0
+grass,grass,Grass,0.327156,191987900,N/A,
+neo,neo,NEO,2.72,191640541,N/A,
+unibase,ub,Unibase,0.07584,189768405,0x6944e1df6bf5972305f9ab25df47ef10de01bcc8,
+dogwifcoin,wif,dogwifhat,0.187421,187150688,N/A,
+btse-token,btse,BTSE Token,1.14,183948591,0x666d875c600aa06ac1cf15641361dec3b00432ef,
+vision-3,vsn,Vision,0.04934207,182211590,0x699ccf919c1dfdfa4c374292f42cadc9899bf753,18.0
+swissborg,borg,SwissBorg,0.183723,180337840,0x64d0f55cd8c7133a9d7102b13987235f486f2224,
+trust-wallet-token,twt,Trust Wallet,0.425999,177466611,N/A,
+thorchain,rune,THORChain,0.504733,177248538,N/A,
+megaeth,mega,MegaETH,0.155274,175119841,N/A,
+decentraland,mana,Decentraland,0.090415,174799374,0x0f5d2fb29fb7d3cfee444a200298f468908cc942,18.0
+story-2,ip,Story,0.491455,173813407,N/A,
+genius-3,genius,Genius,0.518458,173591271,N/A,
+wefi,wfi,WeFi,2.06,171812073,N/A,
+helium,hnt,Helium,0.9297,170782180,N/A,
+spiko-us-t-bills-money-market-fund,ustbl,Spiko US T-Bills Money Market Fund,1.082,168914361,0xe4880249745eac5f1ed9d8f7df844792d560e750,
+re-protocol-reusd,reusd,Re Protocol reUSD,1.074,168522699,0x5086bf358635b81d8c47c66d1c8b9e567db70c72,
+jito-governance-token,jto,Jito,0.357151,166124647,N/A,
+sonic-3,s,Sonic,0.04358756,165224952,N/A,
+ravedao,rave,RaveDAO,0.661959,164305037,0x17205fab260a7a6383a81452ce6315a39370db97,
+tradable-apac-diversified-finance-provider-sstn,pc0000033,Tradable APAC Diversified Finance Provider SSTN,1.0,162500000,N/A,
+nusd-2,nusd,Neutrl USD,0.999036,162409469,0xe556aba6fe6036275ec1f87eda296be72c811bce,
+mx-token,mx,MX,1.76,161923010,0x11eef04c884e24d9b7b4760e7476d06ddf797f36,18.0
+asteroid-shiba,asteroid,Asteroid Shiba,0.00038407,161675728,0xf280b16ef293d8e534e370794ef26bf312694126,9.0
+walrus-2,wal,Walrus,0.069873,160427788,N/A,
+safepal,sfp,SafePal,0.320474,160179702,0x12e2b8033420270db2f3b328e32370cb5b2ca134,
+apecoin,ape,ApeCoin,0.159805,159627640,N/A,
+satoshi-stablecoin,satusd,Satoshi Stablecoin,0.995764,158526494,0x1958853a8be062dc4f401750eb233f5850f0d0d2,
+convex-finance,cvx,Convex Finance,1.72,154903539,0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b,18.0
+pieverse,pieverse,Pieverse,0.672139,154399611,0x0e63b9c287e32a05e6b9ab8ee8df88a2760225a9,
+gala,gala,GALA,0.00323426,154018749,0xd1d2eb1b1e90b638588728b4130137d262c87cae,8.0
+newton-project,ab,AB,0.00155005,153176458,N/A,
+fidelity-digital-interest-token,fdit,Fidelity Digital Interest Token,1.0,152376507,0x48ab4e39ac59f4e88974804b04a991b3a402717f,18.0
+stasis-eurs,eurs,STASIS EURO,1.23,152169219,0xdb25f211ab05b1c97d595516f45794528a807ad8,2.0
+gamer-tag,gmrt,The Game Company,0.412908,150700211,0x6967f0974d76d34e140cae27efea32cdf546b58e,
+akash-network,akt,Akash Network,0.515697,150492171,N/A,
+gusd,gusd,GUSD,0.998496,149895624,N/A,
+zksync,zk,ZKsync,0.01536648,149141649,0x66a5cfb2e9c529f14fe6364ad1075df3a649c0a5,18.0
+falcon-finance-ff,ff,Falcon Finance,0.063442,148381365,0xfa1c09fc8b491b6a4d3ff53a10cad29381b3f949,18.0
+ultima,ultima,Ultima,2848.47,146743422,N/A,
+origintrail,trac,OriginTrail,0.326021,145826379,0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f,
+basic-attention-token,bat,Basic Attention,0.09725,145545560,0x0d8775f648430679a709e98d2b0cb6250d2887ef,
+vaulta,a,Vaulta,0.088727,145376404,N/A,
+usa,usat,USAT,0.999262,144637498,0x07041776f5007aca2a54844f50503a18a72a8b68,
+onyc,onyc,Onchain Yield Coin,1.098,143915711,N/A,
+zano,zano,Zano,9.4,143526342,N/A,
+ribbita-by-virtuals,tibbir,Ribbita by Virtuals,0.1434,143385729,N/A,
+immutable-x,imx,Immutable,0.167117,140752212,0xf57e7e7c23978c3caec3c3548e3d615c346e79ff,
+golem,glm,Golem,0.14046,140494119,0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429,18.0
+ecash,xec,eCash,6.98e-06,139603126,N/A,
+frax-usd,frxusd,Frax USD,0.999877,136626178,0xcacd6fd266af91b8aed52accc382b4e165586e29,18.0
+eigenlayer,eigen,EigenCloud (prev. EigenLayer),0.183549,135092704,0xec53bf9167f50cdeb3ae105f56099aaab9061f83,
+tradable-latam-fintech-sstn,pc0000097,Tradable LatAm Fintech SSTN,1.0,134000000,N/A,
+apollo-diversified-credit-securitize-fund,acred,Apollo Diversified Credit Securitize Fund,1094.94,132603207,0x17418038ecf73ba4026c4f428547bf099706f27b,
+1inch,1inch,1INCH,0.093799,131795889,0x111111111117dc0aa78b770fa6a738034120c302,
+sosovalue,soso,SoSoValue,0.418748,130636947,0x76a0e27618462bdac7a29104bdcfff4e6bfcea2d,18.0
+build-on,b,BUILDon,0.1304,130400365,N/A,
+dydx-chain,dydx,dYdX,0.153096,128508229,N/A,
+arweave,ar,Arweave,1.96,128387950,N/A,
+theo-short-duration-us-treasury-fund,thbill,Theo Short Duration US Treasury Fund,1.02,127425708,0x5fa487bca6158c64046b2813623e20755091da0b,6.0
+chip-2,chip,USD.AI,0.063509,126936651,0x0c1c1c109fe34733fca54b82d7b46b75cfb71f6e,
+cheems-token,cheems,Cheems Token,6.22535e-07,126727817,N/A,
+shuffle-2,shfl,Shuffle,0.303484,125733596,0x8881562783028f5c1bcb985d2283d5e170d88888,18.0
+instadapp,fluid,Fluid,1.62,125551730,0x6f40d4a6237c257fff2db00fa0510deeecd303eb,
+ozone-chain,ozo,Ozone Chain,0.130384,125259728,N/A,
+sentient,sent,Sentient,0.01730239,125257137,0x56a3ba04e95d34268a19b2a4474dc979babdaf76,18.0
+cash-4,cash,CASH,1.0,125249907,N/A,
+societe-generale-forge-eurcv,eurcv,EUR CoinVertible,1.17,124245769,0x5f7827fdeb7c20b443265fc2f40845b715385ff2,18.0
+river,river,River,6.31,123168884,0xda7ad9dea9397cffddae2f8a052b82f1484252b3,
+elrond-erd-2,egld,MultiversX,4.09,122148732,N/A,
+block-street,bsb,Block Street,0.561104,120678007,0xdb6ba5d510f114f9b2ea08bea7d30e32eee33411,
+circle-internet-group-ondo-tokenized-stock,crclon,Circle Internet Group (Ondo Tokenized Stock),91.73,119528869,0x3632dea96a953c11dac2f00b4a05a32cd1063fae,
+astherus-usdf,usdf,Aster USDF,0.998379,119410085,N/A,
+stp-network,awe,AWE Network,0.061076,118609060,N/A,
+centrifuge-2,cfg,Centrifuge,0.205147,118402545,0xcccccccccc33d538dbc2ee4feab0a7a1ff4e8a94,
+gmt-token,gomining,GoMining Token,0.292043,118221108,0x7ddc52c4de30e94be3a6a0a2b259b2850f421989,18.0
+luxxcoin,lux,Luxxcoin,0.00116787,116765095,N/A,
+orca,orca,Orca,1.91,116308461,N/A,
+tokenize-xchange,tkx,Tokenize Xchange,1.44,114888026,0x667102bd3413bfeaa3dffb48fa8288819e480a88,8.0
+cap-usd,cusd,Cap USD,0.999694,114533629,0xcccc62962d17b8914c62d74ffb843d73b2a3cccc,18.0
+tradable-singapore-fintech-ssl-2,pc0000023,Tradable Singapore Fintech SSL,1.0,114500000,N/A,
+bnb48-club-token,koge,KOGE,33.54,113361704,N/A,
+kaito,kaito,KAITO,0.466309,112613604,N/A,
+zero-gravity,0g,0G,0.52705,112363297,0x4b948d64de1f71fcd12fb586f4c776421a35b3ee,18.0
+aethir,ath,Aethir,0.00582378,112097462,0xbe0ed4138121ecfc5c0e56b40517da27e6c5226b,
+wemix-token,wemix,WEMIX,0.239543,110731088,N/A,
+enjincoin,enj,Enjin Coin,0.056196,110474349,0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c,18.0
+tradable-na-third-party-online-merchant-sstn,pc0000015,Tradable NA Third Party Online Merchant SSTN,1.0,110225974,N/A,
+safe,safe,Safe,0.147051,108817786,0x5afe3855358e112b5647b952709e6165e1c1eeee,18.0
+bitmart-token,bmx,BitMart,0.320524,108808766,0x986ee2b944c42d017f52af21c4c69b84dbea35d8,18.0
+rollbit-coin,rlb,Rollbit Coin,0.063443,107300698,0x046eee2cc3188071c02bfc1745a6b17c656e3f3d,
+flying-tulip,ft,Flying Tulip,0.082947,107260656,0x5dd1a7a369e8273371d2dbf9d83356057088082c,
+tradable-latam-middle-market-lender-sstl,pc0000085,Tradable LatAm Middle-Market Lender SSTL,1.0,106500000,N/A,
+seeker,skr,Seeker,0.01698106,106359533,N/A,
+ini,ini,INI,0.125221,106071098,N/A,
+gas,gas,Gas,1.63,105857650,N/A,
+reserve-rights-token,rsr,Reserve Rights,0.0016835,105289198,0x320623b8e4ff03373931769a31fc52a4e78b5d70,
+securitize-tokenized-aaa-clo-fund,stac,Securitize Tokenized AAA CLO Fund,1014.85,105148283,0x51c2d74017390cbbd30550179a16a1c28f7210fc,6.0
+havven,snx,Synthetix,0.304723,105013203,0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f,18.0
+zencash,zen,Horizen,5.82,104850011,N/A,
+livepeer,lpt,Livepeer,2.11,104681913,0x58b6a8a3302369daec383334672404ee733ab239,
+cow-protocol,cow,CoW Protocol,0.186002,103794492,0xdef1ca1fb7fbcdc777520aa7f396b4e015f497ab,18.0
+four,form,Four,0.265938,101529384,N/A,
+palm-usd,pusd,Palm USD,0.999309,101215951,0xfaf0cee6b20e2aaa4b80748a6af4cd89609a3d78,
+mnee-usd-stablecoin,mnee,MNEE USD Stablecoin,0.9995,101044747,0x8ccedbae4916b79da7f3f612efb2eb93a2bfd6cf,
+ring-usd,usdr,Ring USD,1.0,100407024,0x4ea40dcee961675683e0a2e1721bd49cb9bca913,18.0
+standx-dusd,dusd,StandX DUSD,0.999262,100225731,N/A,
+tradable-singapore-fintech-ssl,pc0000077,Tradable Singapore Fintech SSL,1.0,100000000,N/A,
+unity-usd,uusd,Unity USD,0.999431,99942227,N/A,
+chutes,sn64,Chutes,20.33,99849549,N/A,
+nxm,nxm,Nexus Mutual,56.06,99710423,0xd7c49cee7e9188cca6ad8ff264c1da2e69d4cf3b,
+precious-metals-usd,pmusd,Precious Metals USD,0.994118,99611499,0xc0c17dd08263c16f6b64e772fb9b723bf1344ddf,18.0
+melania-meme,melania,Melania Meme,0.103673,98761249,N/A,
+banana-for-scale-2,bananas31,Banana For Scale,0.00980836,98160582,N/A,
+beam-2,beam,Beam,0.00190853,97895868,0x62d0a8458ed7719fdaf978fe5929c6d342b0bfce,18.0
+avant-usd,avusd,Avant USD,0.999324,97654837,N/A,
+kamino,kmno,Kamino,0.02119004,95359915,N/A,
+yearn-finance,yfi,yearn.finance,2661.96,95059040,0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e,
+impossible-cloud-network-token,icnt,Impossible Cloud Network Token,0.37442,94732549,0xe5e0b73380181273abcfd88695f52c4d0c825661,18.0
+ravencoin,rvn,Ravencoin,0.00583027,94431674,N/A,
+berachain-bera,bera,Berachain,0.361242,93789275,N/A,
+0x,zrx,0x Protocol,0.110104,93405072,0xe41d2489571d322189246dafa5ebde1f4699f498,18.0
+spark-2,spk,Spark,0.035169,93398679,0xc20059e0317de91738d13af027dfc4a50781b066,
+ordinals,ordi,ORDI,4.43,92933527,N/A,
+lovebit,lb,LoveBit,2.20691e-07,92690174,N/A,
+qtum,qtum,Qtum,0.86991,92167430,N/A,
+quantum-resistant-ledger,qrl,Quantum Resistant Ledger,1.17,91622111,N/A,
+grx-chain,grx,GRX Chain,9.58,91401275,N/A,
+usdu,usdu,USDu,1.002,91273535,N/A,
+linea,linea,Linea,0.00364281,90745668,0x1789e0043623282d5dcc7f213d703c6d8bafbb04,
+pleasing-gold,pgold,Pleasing Gold,4640.74,90517773,N/A,
+derive,drv,Derive,0.09052,90508218,0xb1d1eae60eea9525032a6dcb4c1ce336a1de71be,
+pharos-network,pros,Pharos,0.663562,89511061,N/A,
+mag7-ssi,mag7.ssi,MAG7.ssi,0.518605,87886551,N/A,
+bio-protocol,bio,Bio Protocol,0.04085643,87811383,0xcb1592591996765ec0efc1f92599a19767ee5ffa,
+lombard-protocol,bard,Lombard,0.281039,87790534,0xf0db65d17e30a966c2ae6a21f6bba71cea6e9754,
+usda-3,usda,USDA,0.995311,86432357,N/A,
+jusd,jusd,JUSD,0.999509,86184136,N/A,
+qubic-network,qubic,Qubic,6.25283e-07,86062140,N/A,
+kusama,ksm,Kusama,4.74,85903181,N/A,
+xdai,xdai,XDAI,0.999751,85261904,N/A,
+everything,ev,Everything,0.00085226,84964361,0xe7e7e741c23a4767831a56a8c99f522c5ac1e7e7,
+cysic,cys,Cysic,0.526745,84707544,N/A,
+vicicoin,vcnt,ViciCoin,17.38,84683417,0x3be775b699fee916e7de117994358ff8f48e4569,
+keeta,kta,Keeta,0.1599,84394717,N/A,
+theta-fuel,tfuel,Theta Fuel,0.01133006,82884485,N/A,
+infinifi-usd,iusd,InfiniFi USD,0.9999,81903660,0x48f9e38f3070ad8945dfeae3fa70987722e3d89c,
+zetachain,zeta,ZetaChain,0.057804,81772982,0xf091867ec603a6628ed83d274e835539d82e9cc8,18.0
+apyusd,apyusd,apyUSD,1.35,81517768,0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a,
+meteora,met,Meteora,0.158374,81305294,N/A,
+unifai-network,uai,UnifAI Network,0.3392,80995453,N/A,
+dog-go-to-the-moon-rune,dog,Dog (Bitcoin),0.00081017,80976171,N/A,
+naoris,naoris,Naoris Protocol,0.134849,80581491,0x1b379a79c91a540b2bcd612b4d713f31de1b80cc,
+basedhype,basedhype,BasedHype,0.00800247,80005566,N/A,
+mbg-by-multibank-group,mbg,MBG By Multibank Group,0.299962,79509967,0x45e02bc2875a2914c4f585bbf92a6f28bc07cb70,18.0
+nexpace,nxpc,Nexpace,0.295305,79473352,N/A,
+exod,exod,EXOD,7.59,79285140,N/A,
+turbo,turbo,Turbo,0.00114786,79188044,0xa35923162c49cf95e6bf26623385eb431ad920d3,
+would,would,would,0.078876,78381984,N/A,
+zilliqa,zil,Zilliqa,0.00397984,77709428,N/A,
+gauntlet-usd-alpha,gtusda,Gauntlet USD Alpha,1.064,77652783,0x3bd9248048df95db4fbd748c6cd99c1baa40bad0,18.0
+superfarm,super,SuperVerse,0.12041,77046067,0xe53ec727dbdeb9e2d5456c3be40cff031ab40a55,18.0
+amp-token,amp,Amp,0.0008876,77007671,0xff20817765cb7f73d4bde2e66e067e58d11095c2,
+toshi,toshi,Toshi,0.00018289,76914296,N/A,
+gmx,gmx,GMX,7.39,76815079,N/A,
+creditcoin-2,ctc,Creditcoin,0.143202,76667252,0xa3ee21c306a700e682abcdfe9baa6a08f3820419,
+mina-protocol,mina,Mina Protocol,0.059533,76464143,N/A,
+holotoken,hot,Holo,0.00042909,76209344,0x6c6ee5e31d828de241282b9606c8e98ea48526e2,
+helio-protocol-hay,lisusd,Lista USD,0.998129,76192336,N/A,
+baby-doge-coin,babydoge,Baby Doge Coin,4.17421e-10,75912058,0xac57de9c1a09fec648e93eb98875b212db0d460b,
+oasis-network,rose,Oasis,0.01000174,75889470,N/A,
+tria,tria,TRIA,0.03513785,75867138,0x228bec415ade4b61d7caf0adf8c91eac587ba369,
+proton,xpr,XPR Network,0.00264707,75840449,0xd7efb00d12c2c13131fd319336fdf952525da2af,4.0
+stau,stau,STAU,0.00757497,75745139,N/A,
+bitcastle-token,bce,bitcastle Token,0.189186,75674297,N/A,
+metal-blockchain,metal,Metal Blockchain,0.148643,75457091,0x294559fa758c88d639fd085751e463fee7806eab,18.0
+cygnus-finance-global-usd,cgusd,Cygnus Finance Global USD,0.993707,75027370,N/A,
+tradable-na-neobank-sstl,pc0000023,Tradable NA Neobank SSTL,1.0,75000000,N/A,
+tagger,tag,TAGGER,0.00068808,74800949,N/A,
+felix-feusd,feusd,Felix feUSD,0.995549,74661264,N/A,
+aioz-network,aioz,AIOZ Network,0.059698,74380895,0x626e8036deb333b408be468f951bdb42433cbf18,
+ronin,ron,Ronin,0.095898,74135264,N/A,
+audiera,beat,Audiera,0.532426,74100896,N/A,
+flow,flow,Flow,0.04459193,74030217,N/A,
+blur,blur,Blur,0.02640197,73645776,0x5283d291dbcf85356a21ba090e6db59121208b44,
+axelar,axl,Axelar,0.063161,73574060,0x467719ad09025fcc6cf6f8311755809d45a5e5f3,
+ai-rig-complex,arc,AI Rig Complex,0.073527,73522349,N/A,
+wormhole,w,Wormhole,0.01257024,72842131,0xb0ffa8000886e57f86dd5264b9582b2ad87b2b91,18.0
+railgun,rail,Railgun,1.26,72501703,0xe76c6c83af64e4c60245d8c7de953df673a7a33d,18.0
+nervos-network,ckb,Nervos Network,0.00148825,72427657,N/A,
+bc-token,bc,BCGame Coin,0.00725485,72385795,N/A,
+based-brett,brett,Brett,0.00730502,72379590,N/A,
+sahara-ai,sahara,Sahara AI,0.02204888,72196287,0xfdffb411c4a70aa7c95d5c981a6fb4da867e1111,
+matrixdock-gold,xaum,Matrixdock Gold,4601.54,72190130,0x2103e845c5e135493bb6c2a4f0b8651956ea8682,
+debridge,dbr,deBridge,0.01353919,72068754,N/A,
+mimblewimblecoin,mwc,MimbleWimbleCoin,6.53,71831132,N/A,
+deep,deep,DeepBook,0.02852215,71338422,N/A,
+vaneck-treasury-fund,vbill,VanEck Treasury Fund,1.0,71267511,0x2255718832bc9fd3be1caf75084f4803da14ff01,6.0
+ontology,ont,Ontology,0.07109,71085436,N/A,
+comedian,ban,Comedian,0.070818,70988191,N/A,
+alchemist-ai,alch,Alchemist AI,0.083229,70772530,N/A,
+midas-mf-one,mf-one,Midas mF-ONE,1.081,70470543,0x238a700ed6165261cf8b2e544ba797bc11e466ba,18.0
+coinex-token,cet,CoinEx,0.02788544,70470269,0x081f67afa0ccf8c7b17540767bbe95df2ba8d97f,18.0
+temple,temple,TempleDAO,2.97,70420643,0x470ebf5f030ed85fc1ed4c2d36b9dd02e77cf1b7,
+digibyte,dgb,DigiByte,0.00384522,70206521,N/A,
+irys,irys,Irys,0.03508935,70179275,0x50f41f589afaca2ef41fdf590fe7b90cd26dee64,18.0
+astar,astr,Astar,0.00811501,69735929,0xf27441230eadeac85b764610325cc9a0d7859689,18.0
+apes-2-2,apes,APES,0.077386,69646805,N/A,
+fasttoken,ftn,Fasttoken,0.159833,69345834,0xaedf386b755465871ff874e3e37af5976e247064,
+arkham,arkm,Arkham,0.110845,69033434,0x6e2a43be0b1d33b726f0ca3b8de60b3482b8b050,
+fogo,fogo,Fogo,0.01795772,68480896,N/A,
+dmt-nat,nat,DMT-NAT,1.75664e-07,68069679,0x249130f5e2dd4cf278180c0df8273f3592ad1247,0.0
+targon,sn4,Targon,14.65,67447894,N/A,
+mindwavedao,nila,MindWaveDAO,0.078662,66293777,N/A,
+threshold-network-token,t,Threshold Network,0.00588157,65614864,0xcdf7028ceab81fa0c6971208e83fa7872994bee5,18.0
+puff-the-dragon,puff,Puff The Dragon,0.073744,65550283,0x31b6100f5f4466e6daeb1edb2f2ce6e548cf8938,18.0
+tronbank,tbk,TronBank,0.649208,64920592,N/A,
+dola-usd,dola,DOLA,0.992011,64890590,0x865377367054516e17014ccded1e7d814edc9ce4,18.0
+dai-on-pulsechain,dai,DAI on PulseChain,0.00144919,64284456,N/A,
+movement,move,Movement,0.01749438,64256726,0x3073f7aaa4db83f95e9fff17424f71d4751a3073,
+plume,plume,Plume,0.01156814,64155076,0x4c1746a800d224393fe2470c70a35717ed4ea5f1,
+aelf,elf,aelf,0.078012,63951535,0xbf2179859fc6d5bee9bf9158632dc51678a4100e,
+straitsx-xusd,xusd,StraitsX XUSD,0.999703,63894033,0xc08e7e23c235073c6807c2efe7021304cb7c2815,
+greyhunt,hunt,Greyhunt,2.96,63743649,N/A,
+main-street-usd,msusd,Main Street USD,0.999779,63202968,0x4ba01f22827018b4772cd326c7627fb4956a7c00,18.0
+non-playable-coin,npc,Non-Playable Coin,0.00780494,62808510,0x8ed97a637a790be1feff5e888d43629dc05408f6,18.0
+chainopera-ai,coai,ChainOpera AI,0.33324,62650433,N/A,
+tradable-north-america-pos-lender-sstn,pc0000019,Tradable North America PoS Lender SSTN,1.0,62500000,N/A,
+numeraire,nmr,Numeraire,8.87,62440292,0x1776e1f26f98b1a5df9cd347953a26dd3cb46671,
+kava,kava,Kava,0.056921,61647207,N/A,
+moo-deng,moodeng,Moo Deng,0.062236,61542762,N/A,
+rekt-4,rekt,Rekt,1.46319e-07,61512689,0xdd3b11ef34cd511a2da159034a05fcb94d806686,18.0
+dusk-network,dusk,DUSK,0.121741,60917802,0x940a2db1b7008b6c776d4faaca729d6d4a4aa551,
+rosa-inu,rosa,Rosa Inu,0.00060864,60854707,N/A,
+swop-2,swop,Swop,0.00607121,60712120,N/A,
+verus-coin,vrsc,Verus,0.753913,60503362,N/A,
+bitkub-coin,kub,KUB Coin,0.874176,60296017,N/A,
+celium,sn51,lium,15.55,60257873,N/A,
+polymesh,polyx,Polymesh,0.04738772,60233789,N/A,
+zama,zama,Zama,0.02738163,60210079,0xa12cc123ba206d4031d1c7f6223d1c2ec249f4f3,18.0
+nano,xno,Nano,0.448767,59787165,N/A,
+eurite,euri,Eurite,1.17,59750160,0x9d1a7a3191102e9f900faa10540837ba84dcbae7,18.0
+jupusd,jupusd,JupUSD,0.999919,59630676,N/A,
+saturn-dollar,usdat,Saturn Dollar,0.999917,59454738,0x23238f20b894f29041f48d88ee91131c395aaa71,6.0
+agentfun-ai,agentfun,AgentFun.AI,0.592175,59216398,N/A,
+openledger-2,open,OpenLedger,0.272779,58735760,0xa227cc36938f0c9e09ce0e64dfab226cad739447,18.0
+mog-coin,mog,Mog Coin,1.49816e-07,58512287,0xaaee1a9723aadb7afa2810263653a34ba2c21c7a,
+aztec,aztec,Aztec,0.01973048,58441038,0xa27ec0006e59f245217ff08cd52a7e8b169e62d2,
+usdx,usdx,USDX,0.523172,58368133,N/A,
+velo,velo,Velo,0.00331932,58353308,N/A,
+mantra-dao,om,MANTRA [Old],0.01171044,58319448,N/A,
+strategy-pp-variable-xstock,strcx,Strategy PP Variable xStock,103.12,57530986,0x1aad217b8f78dba5e6693460e8470f8b1a3977f3,
+unit-pump,upump,Unit Pump,0.00180383,57512951,N/A,
+soon-2,soon,SOON,0.16918,57477533,N/A,
+main-street-yield,msy,Main Street Yield,1.034,57375688,0x890a5122aa1da30fec4286de7904ff808f0bd74a,
+mocaverse,moca,Moca Network,0.01402184,57317570,0xf944e35f95e819e752f3ccb5faf40957d311e8c5,18.0
+yooldo-games,esports,Yooldo Games,0.377388,57248354,N/A,
+sushi,sushi,Sushi,0.209423,57183600,0x6b3595068778dd592e39a122f4f5a5cf09c90fe2,18.0
+babylon,baby,Babylon,0.01474271,56933255,N/A,
+hashkey-ecopoints,hsk,HashKey Platform Token,0.165062,56921158,0xe7c6bf469e97eeb0bfb74c8dbff5bd47d4c1c98a,
+bitdca,bdca,BitDCA,0.685279,56295978,N/A,
+popcat,popcat,Popcat,0.057455,56294253,N/A,
+vethor-token,vtho,VeThor,0.00056369,56201408,N/A,
+pythia,pythia,PYTHIA,0.056214,56100865,N/A,
+zora,zora,Zora,0.01254248,56049206,N/A,
+peanut-the-squirrel,pnut,Peanut the Squirrel,0.056112,56018903,N/A,
+world-mobile-token,wmtx,World Mobile Token,0.065771,55992837,0xdbb5cf12408a3ac17d668037ce289f9ea75439d7,
+quantixai,qfi,Quantix Finance,55.57,55574350,N/A,
+home,home,HOME,0.01500604,55538420,N/A,
+concordium,ccd,Concordium,0.00458822,55249649,N/A,
+vvs-finance,vvs,VVS Finance,1.26e-06,54794466,0x839e71613f9aa06e5701cf6de63e303616b0dde3,
+api3,api3,Api3,0.379367,54238080,0x0b38210ea11411557c13457d4da7dc6ea731b88a,
+rif-token,rif,Rootstock Infrastructure Framework,0.054182,54185812,0x01b603be3d545f096015741e6503440282bf45fb,18.0
+tesla-xstock,tslax,Tesla xStock,381.71,54136953,0x8ad3c73f833d3f9a523ab01476625f269aeb7cf0,18.0
+tac,tac,TAC,0.01820554,54111926,N/A,
+crown-brlv,brlv,Crown BRLV,0.201653,54055161,0xd7ca0e2c36d647446b782d1b72308e598373e2f5,
+loaded-lions,lion,Loaded Lions,0.00175609,54023890,N/A,
+magic-eden,me,Magic Eden,0.105056,53962398,N/A,
+tellor,trb,Tellor Tributes,19.34,53841872,0x88df592f8eb5d7bd38bfef7deb0fbc02cf3778a0,
+brz,brz,Brazilian Digital,0.201044,53554630,0x01d33fd36ec67c6ada32cf36b31e88ee190b1839,18.0
+tradable-na-legal-receivables-ssl,pc0000081,Tradable NA Legal Receivables SSL,1.0,53443370,N/A,
+mimbogamegroup,mgg,MimboGameGroup,0.00300866,53403047,N/A,
+midas-mtbill,mtbill,Midas mTBILL,1.059,53390602,0xdd629e5241cbc5919847783e6c96b2de4754e438,18.0
+escoin-token,elg,Escoin,0.288281,53104045,0xa2085073878152ac3090ea13d1e41bd69e60dc99,
+jelly-my-jelly,jellyjelly,Jelly-My-Jelly,0.05304,53073642,N/A,
+affine,sn120,affine,17.51,52971423,N/A,
+lab,lab,LAB,0.686147,52378420,N/A,
+cat-in-a-dogs-world,mew,cat in a dogs world,0.0005893,52354375,N/A,
+tdccp,tdccp,TDCCP,0.081281,52019816,N/A,
+mask-network,mask,Mask Network,0.519991,51976373,0x69af81e73a73b40adf4f3d4223cd9b1ece623074,
+request-network,req,Request,0.069727,51848106,0x8f8221afbb33998d8584a2b05749ba73c37a938a,
+celo,celo,Celo,0.086182,51741520,N/A,
+gensyn,ai,Gensyn,0.03953198,51718250,0x4d7078ddd6ccfed2f85db5b7d3ff16828d378d48,18.0
+geodnet,geod,Geodnet,0.119513,51471986,N/A,
+riv-coin,riv,RIV Coin,0.01257826,51138685,N/A,
+pay-coin,pci,Paycoin,0.050017,51126328,N/A,
+dual,dual,Dual,0.00690556,50992966,0x6af487beb661ccecd1d045e9561a0dac9aa5c7db,
+verge,xvg,Verge,0.00307858,50853315,N/A,
+meta-2-2,meta,MetaDAO,2.23,50661842,N/A,
+fidelity-digital-dollar,fidd,Fidelity Digital Dollar,0.999472,50524246,0x7c135549504245b5eae64fc0e99fa5ebabb8e35d,18.0
+sierra-2,sierra,Sierra,1.02,50144900,0x6bf7788eaa948d9ffba7e9bb386e2d3c9810e0fc,6.0
+usdkg,usdkg,USDKG,0.999717,49985495,0xe820c06321e60d36257c666643fa5436643445e3,
+alloy-tether,ausdt,Alloy Tether,0.998778,49938899,0x9eead9ce15383caeed975427340b3a369410cfbf,6.0
+wiki-cat,wkc,Wiki Cat,9.3031e-08,49936097,N/A,
+perle,prl,Perle,0.284389,49750692,N/A,
+redstone-oracles,red,RedStone,0.133698,49608159,0xc43c6bfeda065fe2c4c11765bf838789bd0bb5de,
+law-blocks,lbt,Law Blocks AI,0.202159,49529113,N/A,
+myx-finance,myx,MYX Finance,0.258875,49393177,N/A,
+tradable-eu-latam-pos-financing-sstl,pc0000049,Tradable Eu/LatAm PoS Financing SSTL,1.0,49300000,N/A,
+terra-luna-2,luna,Terra,0.068683,48774659,N/A,
+zerobase,zbt,ZEROBASE,0.198382,48526464,0xfab99fcf605fd8f4593edb70a43ba56542777777,18.0
+mantra,mantra,MANTRA,0.00973025,48459458,N/A,
+aleo,aleo,ALEO,0.04480559,48306539,N/A,
+xyo-network,xyo,XYO Network,0.00346444,48252758,0x55296f69f40ea6d20e478533c15a6b08b654e758,
+avantis,avnt,Avantis,0.14974,47928670,N/A,
+succinct,prove,Succinct,0.244691,47727887,0x6bef15d938d4e72056ac92ea4bdd0d76b1c4ad29,
+ankr,ankr,Ankr Network,0.00476406,47632660,0x8290333cef9e6d528dd5618fb97a76f268f3edd4,18.0
+ondo-u-s-dollar-token,usdon,Ondo U.S. Dollar Token,1.0,47470363,0xace8e719899f6e91831b18ae746c9a965c2119f1,18.0
+sygnum-fiusd-liquidity-fund,fiusd,Sygnum FIUSD Liquidity Fund,11859.87,47411728,N/A,
+altlayer,alt,AltLayer,0.00748301,46110508,0x8457ca5040ad67fdebbcc8edce889a335bc0fbfb,
+siacoin,sc,Siacoin,0.0009236,45950188,N/A,
+fractal-bitcoin,fb,Fractal Bitcoin,0.453767,45782918,N/A,
+opengradient,opg,OpenGradient,0.239047,45401879,N/A,
+palladium-network,plld,Palladium Network,0.875969,45396682,0xfc8dcfca8a37a855e352098af205b3a537b6b026,18.0
+gohome,gohome,GOHOME,86.37,45341118,N/A,
+deso,deso,Decentralized Social,4.25,44793151,N/A,
+casper-network,cspr,Casper Network,0.00281387,44672776,N/A,
+vana,vana,Vana,1.45,44624725,0x7ff7fa94b8b66ef313f7970d4eebd2cb3103a2c0,
+novachargex-coin,ncx,NovaChargeX Coin,0.371485,44578193,0xf8a6f43ce478aac1db99c07661dfd3acb5890792,
+unipoly,unp,Unipoly,0.159234,44462915,0x23d7ff057c696fee679c60cef61fee6614218f04,
+frax-share,frax,Frax (prev. FXS),0.460733,43982773,0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0,18.0
+magma-finance,magma,Magma Finance,0.230475,43799990,N/A,
+circle-xstock,crclx,Circle xStock,91.74,43733098,0xfebded1b0986a8ee107f5ab1a1c5a813491deceb,18.0
+space-and-time,sxt,Space and Time,0.01672578,43459011,0xe6bfd33f52d82ccb5b37e16d3dd81f9ffdabb195,18.0
+bim-2,bim,BIM,1.44,43332317,N/A,
+glidr,glidr,Glidr,1.22,43315106,N/A,
+bedrock-token,br,Bedrock,0.172408,43147511,0x9b61879e91a0b1322f3d61c23aaf936231882096,18.0
+diem,diem,Diem,1096.5,42513167,N/A,
+venus,xvs,Venus,2.52,42469098,0xd3cc9d8f3689b83c91b7b59cab4946b063eb894a,18.0
+iotex,iotx,IoTeX,0.00447594,42262098,0x6fb3e0a217407efff7ca062d46c26e5d60a14d69,
+anvil,anvl,Anvil,0.00051906,42143813,0xaeeaa594e7dc112d67b8547fe9767a02c15b5597,
+bora,bora,BORA,0.03635168,41904395,N/A,
+ardor,ardr,Ardor,0.0419428,41878467,N/A,
+robo-token-2,robo,Fabric Protocol,0.0186611,41599514,0x32b4d049fe4c888d2b92eecaf729f44df6b1f36e,18.0
+orbs,orbs,Orbs,0.00844853,41595324,0xff56cc6b1e6ded347aa0b7676c85ab0b3d08b0fa,
+project-galaxy,gal,GAL (migrated to Gravity - G),0.324561,41458541,0x5faa989af96af85384b8a938c2ede4a7378d9875,18.0
+cross-2,cross,CROSS,0.104243,41413429,N/A,
+chia,xch,Chia,2.25,41293813,N/A,
+uma,uma,UMA,0.45324,41237109,0x04fa0d235c4abf4bcf4787af4cf447de572ef828,
+unitywallet-token,unt,UnityWallet Token,0.062685,41190402,N/A,
+rocket-pool,rpl,Rocket Pool,1.83,41018875,0xd33526068d116ce69f19a9ee46f0bd304f21a51f,
+venom,venom,Venom,0.01905997,41004773,0x46f84dc6564cdd93922f7bfb88b03d35308d87c9,9.0
+hyperlane,hyper,Hyperlane,0.121378,41002561,0x93a2db22b7c736b341c32ff666307f4a9ed910f5,18.0
+gekko,gekko,GEKKO,6.84556e-07,41001254,0xf017d3690346eb8234b85f74cee5e15821fee1f4,18.0
+islamic-coin,islm,Islamic Coin,0.01168049,40971556,N/A,
+coredaoorg,core,Core,0.03789387,40923671,N/A,
+ishares-bitcoin-trust-ondo-tokenized,ibiton,iShares Bitcoin Trust (Ondo Tokenized),43.67,40859413,0x122940c4c5f9ccfae7fa86455a42d3ec140855ce,18.0
+pirate-chain,arrr,Pirate Chain,0.207941,40800974,N/A,
+zignaly,zig,ZIGChain,0.02895518,40792889,0xb2617246d0c6c0087f18703d576831899ca94f01,
+velvet,velvet,Velvet,0.110856,40701728,N/A,
+waves,waves,Waves,0.405964,40596598,0x1cf4592ebffd730c7dc92c1bdffdfc3b9efcf29a,18.0
+paxos-standard,usdp,Pax Dollar,0.999471,40548008,0x8e870d67f660d95d5be530380d0ec0bd388289e1,
+gemini-dollar,gusd,Gemini Dollar,0.999898,40461314,0x056fd409e1d7a124bd7017459dfea2f387b6d5cd,
+meet48,idol,MEET48,0.02264729,40368016,N/A,
+apriori,apr,aPriori,0.163403,40344355,0x5a9610919f5e81183823a2be4bd1beb2b4da2a20,18.0
+skale,skl,SKALE,0.0066187,40314925,0x00c83aecc790e8a4453e5dd3b0b4b3680501a7a7,18.0
+ssv-network,ssv,SSV Network,2.74,40233329,0x9d65ff81a3c488d585bbfb0bfe3c7707c7917f54,18.0
+staked-frax-usd,sfrxusd,Frax Staked frxUSD,1.2,40177242,0xcf62f905562626cfcdd2261162a51fd02fc9c5b6,18.0
+score,sn44,Score,8.85,40120358,N/A,
+changenow,now,ChangeNOW,0.479642,40094494,0xe9a95d175a5f4c9369f3b74222402eb1b837693b,
+illuvium,ilv,Illuvium,4.84,40073255,0x767fe9edc9e0df98e07454847909b5e959d7ca0e,
+yzy,yzy,YZY,0.308293,40030663,N/A,
+merlin-chain,merl,Merlin Chain,0.03236944,40029591,0xa0c56a8c0692bd10b3fa8f8ba79cf5332b7107f9,18.0
+nockchain,nock,Nockchain,0.02047086,40014042,N/A,
+bitget-wrapped-btc,bgbtc,Bitget Wrapped BTC,77040.0,39983880,0x0520930f21b14cafac7a27b102487bee7138a017,8.0
+apex-token-2,apex,APEX,0.287568,39915061,0x52a8845df664d76c69d2eea607cd793565af42b8,
+purr-2,purr,Purr,0.066985,39891977,N/A,
+icon,icx,ICON,0.0363683,39847215,N/A,
+proprietary-trading-network,sn8,Proprietary Trading Network,8.91,39766397,N/A,
+superfortune,gua,Superfortune,0.881265,39717905,N/A,
+holoworld,holo,Holoworld,0.062067,39708955,N/A,
+binance-usd,busd,BUSD,0.989885,39621440,0x4fabb145d64652a948d72533023f6e7a623c7c53,18.0
+status,snt,Status,0.00999575,39587810,0x744d70fdbe2ba4cf95131626614a1763df805b9e,
+spdr-s-p-500-etf-ondo-tokenized-etf,spyon,SPDR S&P 500 ETF (Ondo Tokenized ETF),725.25,39554624,0xfedc5f4a6c38211c1338aa411018dfaf26612c08,
+bitway,btw,Bitway,0.01792734,39473750,0x3a63de3572c69a1307ff08394f3ee7702c16d25d,
+neiro-3,neiro,Neiro,9.348e-05,39319034,0x812ba41e071c7b7fa4ebcfb62df5f45f6fa853ee,9.0
+frankencoin,zchf,Frankencoin,1.28,39101511,0xb58e61c3098d85632df34eecfb899a1ed80921cb,18.0
+ebtc-2,ebtc,eBTC,76717.0,39090648,N/A,
+dogelon-mars,elon,Dogelon Mars,3.9018e-08,39019573,N/A,
+burnedfi,burn,BurnedFi,3.14,38960813,N/A,
+pumpmeme,pm,PumpMeme,1.22,38907108,N/A,
+moonbirds,birb,Moonbirds,0.136616,38905543,N/A,
+edu-coin,edu,Open Campus,0.051452,38825644,0x26aad156ba8efa501b32b42ffcdc8413f90e9c99,
+io,io,io.net,0.117334,38773415,N/A,
+playsout,play,PlaysOut,0.103491,38664605,N/A,
+huma-finance,huma,Huma Finance,0.02223441,38540395,N/A,
+invesco-qqq-etf-ondo-tokenized-etf,qqqon,Invesco QQQ ETF (Ondo Tokenized ETF),670.28,38514238,0x0e397938c1aa0680954093495b70a9f5e2249aba,18.0
+coti,coti,COTI,0.01372687,38402923,0xddb3422497e61e13543bea06989c0789117555c5,
+useless-3,useless,Useless Coin,0.03841249,38399115,N/A,
+notcoin,not,Notcoin,0.00038583,38332259,N/A,
+constitutiondao,people,ConstitutionDAO,0.00754894,38246027,0x7a58c0be72be218b41c608b7fe7c5bb630736c71,18.0
+quack-ai,q,Quack AI,0.01006857,38165633,0xc07e1300dc138601fa6b0b59f8d0fa477e690589,18.0
+apro,at,Apro,0.165977,38157067,0x0581ccdf2d9bca21baeff8b32b2551fd49cf70aa,18.0
+band-protocol,band,Band,0.215088,37756204,0xba11d00c5f74255f56a5e366f4f77f5a186d7f55,18.0
+renzo,rez,Renzo,0.00449898,37752087,0x3b50805453023a91a8bf641e279401a0b23fa6f9,18.0
+pundi-x-2,pundix,Pundi X,0.145511,37599218,0x0fd10b9899882a6f2fcb5c371e17e70fdee00c38,
+atoshi,atos,Atoshi,0.04175794,37498078,0x4d0528598f916fd1d8dc80e5f54a8feedcfd4b18,
+atomone,atone,AtomOne,0.28784,37438693,N/A,
+ecomi,omi,ECOMI,0.00013692,37109188,0xed35af169af46a02ee13b9d79eb57d6d68c1749e,
+book-of-meme,bome,BOOK OF MEME,0.00053521,36848639,N/A,
+prometeus,prom,Prom,2.02,36813390,0xfc82bb4ba86045af6f327323a46e80412b91b27d,
+bas,bas,BNB Attestation Service,0.01468432,36799380,N/A,
+alchemy-pay,ach,Alchemy Pay,0.00742561,36700119,0xed04915c23f00a313a544955524eb7dbd823143d,8.0
+botxcoin,botx,BOTXCOIN,0.698638,36684877,0xef19f4e48830093ce5bc8b3ff7f903a0ae3e9fa1,
+storx,srx,StorX,0.06024,36526985,N/A,
+peaq-2,peaq,peaq,0.01773266,36521415,N/A,
+terrausd,ustc,TerraClassicUSD,0.00648801,36175916,N/A,
+hermez-network-token,hez,Hermez Network,3.27,36044708,0xeef9f339514298c6a857efcfc1a762af84438dee,
+aegis-yusd,yusd,Aegis YUSD,0.998482,36022011,0x4274cd7277c7bb0806bd5fe84b9adae466a8da0a,18.0
+nvidia-ondo-tokenized-stock,nvdaon,NVIDIA (Ondo Tokenized Stock),200.73,36019056,0x2d1f7226bd1f780af6b9a49dcc0ae00e8df4bdee,18.0
+swftcoin,swftc,SWFTCOIN,0.00358562,35853939,0x0bb217e40f8a5cb79adf04e1aab60e5abd0dfc1e,8.0
+mass-vehicle-ledger,mvl,MVL,0.00128914,35831280,0xa849eaae994fb86afa73382e9bd88c2b6b18dc71,
+memecoin-2,meme,Memecoin,0.00057078,35715641,0xb131f4a55907b10d1f0a50d8ab8fa09ec342cd74,18.0
+openeden-open-dollar,usdo,OpenEden OpenDollar,0.997717,35646593,0x8238884ec9668ef77b90c6dff4d1a9f4f4823bfe,18.0
+snowbank,sb,Snowbank,223.03,35604482,N/A,
+espresso,esp,Espresso,0.068345,35573416,0x031de51f3e8016514bd0963d0b2ab825a591db9a,18.0
+backpack,bp,Backpack,0.14258,35545263,N/A,
+resupply-usd,reusd,Resupply USD,0.999306,35326425,0x57ab1e0003f623289cd798b1824be09a793e4bec,
+woo-network,woo,WOO,0.0186806,35322420,0x4691937a7508860f876c9c0a2a617e7d9e945d4b,18.0
+snek,snek,Snek,0.00047365,35267596,N/A,
+kgen,kgen,KGeN,0.176887,35206126,N/A,
+omni-network,omni,Omni Network [Old],0.654023,35174802,N/A,
+whiteheart,white,Whiteheart,3956.29,35163497,0x5f0e628b693018f639d10e4a4f59bd4d8b2b6b44,18.0
+auction,auction,Bounce,4.76,35134518,0xa9b1eb5908cfc3cdf91f9b8b3a74108598009096,18.0
+small-thing,st,Small Thing,0.00196496,35099309,N/A,
+tokamak-network,ton,Tokamak Network,0.618367,35075397,0x2be5e8c109e2197d077d13a82daead6a9b3433c5,18.0
+iostoken,iost,IOST,0.00106321,34906715,N/A,
+mango-markets,mngo,Mango,0.03109,34742049,N/A,
+helder,hldr,Helder,0.177769,34703121,N/A,
+okzoo,aiot,OKZOO,0.130774,34467061,N/A,
+stepn,gmt,GMT,0.01105381,34392816,0xe3c408bd53c31c085a1746af401a4042954ff740,8.0
+nirvana-ana-2,ana,Nirvana ANA,4.19,34287517,N/A,
+harmony,one,Harmony,0.00229505,34127232,N/A,
+ark,ark,ARK,0.173736,34090446,N/A,
+liquity-bold-2,bold,BOLD,0.999944,34052087,0x6440f144b7e50d6a8439336510312d2f54beb01d,
+secret,scrt,Secret,0.100121,34004374,N/A,
+hive_dollar,hbd,Hive Dollar,1.021,33947913,N/A,
+fx-usd-saving,fxsave,f(x) USD Saving,1.094,33784276,0x7743e50f534a7f9f1791dde7dcd89f7783eefc39,18.0
+aintivirus,ainti,AIntivirus,0.0337323,33724270,N/A,
+ong,ong,Ontology Gas,0.07178,33695224,N/A,
+ethereum-pow-iou,ethw,EthereumPoW,0.310507,33472122,N/A,
+unit-plasma,uxpl,Unit Plasma,0.092852,33431876,N/A,
+f-x-protocol-fxusd,fxusd,f(x) Protocol fxUSD,0.997214,33399094,0x085780639cc2cacd35e474e71f4d000e2405d8f6,18.0
+euler,eul,Euler,1.38,33350011,0xd9fcd98c322942075a5c3860693e9f4f03aae07b,18.0
+bancor,bnt,Bancor Network,0.308551,33342339,0x1f573d6fb3f13d689ff844b4ce37794d79a7ff1c,
+goplus-security,gps,GoPlus Security,0.00754637,33285850,N/A,
+power-ledger,powr,Powerledger,0.062705,33219388,0x595832f8fc6bf59c85c527fec3740a1b7a361269,6.0
+ryze,ryze,Ryze,0.152877,33097513,0x44e3ae622c1570dc6e492adb8de92d01ca923d26,18.0
+pumpcade,pumpcade,PUMPCADE,0.03309655,33053259,N/A,
+cyberconnect,cyber,CYBER,0.525704,32936282,0x14778860e937f509e651192a90589de711fb88a9,
+carv,carv,CARV,0.055695,32804469,0xc08cd26474722ce93f4d0c34d16201461c10aa8c,
+xtusd,xtusd,XT Stablecoin XTUSD,0.999605,32787556,N/A,
+subsquid,sqd,SQD,0.0304676,32754866,N/A,
+quai-network,quai,Quai Network,0.03328878,32643693,N/A,
+tokenlon,lon,Tokenlon,0.264027,32591576,0x0000000000095413afc295d19edeb1ad7b71c952,
+prize-protocol,prize,Prize Protocol,0.00076881,32549445,N/A,
+blockv,vee,BLOCKv,0.01378372,32354424,0x340d2bde5eb28c1eed91b2f790723e3b160613b7,
+ustbl-tokenized-u-s-treasury-bill,ustbl,USTBL,1.052,32208952,N/A,
+hive,hive,Hive,0.059576,32198759,N/A,
+america-party-5,america,America Party,7.6301e-08,32098589,0xb03eef386a61b5b462051636001485fffdd3d843,
+sai,sai,Sai,12.0,31928741,0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359,
+manta-network,manta,Manta Network,0.068198,31818268,N/A,
+zerebro,zerebro,Zerebro,0.03207998,31785794,N/A,
+metamask-usd,musd,MetaMask USD,0.999464,31756244,0xaca92e438df0b2401ff60da7e4337b687a2435da,
+aixbt,aixbt,aixbt,0.03185333,31740987,0x0d37af9d8ae74f35f3a38bd2a08fcb29890ca6d2,18.0
+constellation-labs,dag,Constellation,0.00817368,31503774,N/A,
+iexec-rlc,rlc,iExec RLC,0.432343,31291916,0x607f4c5bb672230e8672085532f7e901544a7375,9.0
+apex-4,ap3x,APEX,0.01945755,31248428,N/A,
+dacxi,dxi,Dacxi,0.00044378,31131861,0x5e29cf3e3fed4df50acab95f8268e9ee26ea36f2,
+official-fo,fo,Official FO,0.241147,31093063,N/A,
+janction,jct,Janction,0.00272105,31034549,0xc477b6dfd26ec2460b3b92de18837fd476ea7549,18.0
+tradable-latam-bnpl-sstn,pc0000027,Tradable LatAm BNPL SSTN,1.0,30950000,N/A,
+arcblock,abt,Arcblock,0.31357,30911732,0xb98d4c97425d9908e66e53a6fdf673acca0be986,18.0
+strategic-oil-supply-2,sos,Strategic Oil Supply,0.00030802,30877220,N/A,
+giggle-fund,giggle,Giggle Fund,30.85,30845049,N/A,
+steem,steem,Steem,0.056356,30781279,N/A,
+kinetiq,kntq,Kinetiq,0.113878,30739752,N/A,
+across-protocol,acx,Across Protocol,0.04340082,30623497,0x44108f0223a3c3028f5fe7aec7f9bb2e66bef82f,
+just-a-frog,frog,just a frog,0.03058609,30585012,N/A,
+deapcoin,dep,DEAPCOIN,0.00111078,30566267,0x1a3496c18d558bd9c6c8f609e1b129f67ab08163,18.0
+wax,waxp,WAX,0.00663115,30483509,0x2a79324c19ef2b89ea98b23bc669b7e7c9f8a517,8.0
+blast,blast,Blast,0.0005013,30390104,N/A,
+tokenised-gbp,tgbp,Tokenised GBP,1.36,30322043,0x27f6c8289550fce67f6b50bed1f519966afe5287,18.0
+alphabet-class-a-ondo-tokenized-stock,googlon,Alphabet Class A (Ondo Tokenized Stock),390.73,30279736,0xba47214edd2bb43099611b208f75e4b42fdcfedc,
+chex-token,chex,Chintai,0.02419994,30209483,0x9ce84f6a69986a83d92c324df10bc8e64771030f,18.0
+meme-horse,mhorse,MEME HORSE,0.03020008,30205772,N/A,
+sign-global,sign,Sign,0.01566707,30198007,0x868fced65edbf0056c4163515dd840e9f287a4c3,
+bankercoin-2,bnkr,BankrCoin,0.00030092,30089904,N/A,
+ai-companions,aic,AI Companions,0.02992216,30081566,N/A,
+ridges-ai,sn62,Ridges AI,6.62,30070262,N/A,
+tx,tx,tx,0.00958185,30063758,N/A,
+yield-guild-games,ygg,Yield Guild Games,0.04041352,30036670,0x25f8087ead173b73d6e8b84329989a8eea16cf73,
+tornado-cash,torn,Tornado Cash,7.88,30008161,0x77777feddddffc19ff86db637967013e6c6a116c,18.0
+autonomi,ant,Autonomi,0.091571,30004046,N/A,
+liquity,lqty,Liquity,0.303354,29908839,0x6dea81c8171d0ba574754ef6f8b412f2ed88c54d,
+lista,lista,Lista DAO,0.082665,29900762,N/A,
+somnia,somi,Somnia,0.186376,29856564,N/A,
+sp500-xstock,spyx,SP500 xStock,722.4,29777146,0x90a2a4c76b5d8c0bc892a69ea28aa775a8f2dd48,18.0
+nkyc-token,nkyc,NKYC Token,7.42,29680764,N/A,
+victoria-vr,vr,Victoria VR,0.00176309,29619948,0x7d5121505149065b562c789a0145ed750e6e8cdd,18.0
+microstrategy-xstock,mstrx,MicroStrategy xStock,167.44,29569244,0xae2f842ef90c0d5213259ab82639d5bbf649b08e,
+brevis,brev,Brevis,0.117678,29400524,0x086f405146ce90135750bbec9a063a8b20a8bffb,18.0
+sats-ordinals,sats,SATS (Ordinals),1.3938e-08,29264512,N/A,
+monerium-eur-money-2,eure,Monerium EUR emoney,1.17,29207488,0x39b8b6385416f4ca36a20319f70d28621895279d,18.0
+dkargo,dka,dKargo,0.00585226,29165797,0x5dc60c4d5e75d22588fa17ffeb90a63e535efce0,
+moonriver,movr,Moonriver,2.56,29155504,N/A,
+lisk,lsk,Lisk,0.124654,29059617,0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f,
+tcy,tcy,THORChain Yield,0.138503,29030872,N/A,
+singularry,singularry,Singularry,0.02881832,28949595,N/A,
+cartesi,ctsi,Cartesi,0.03168877,28885080,0x491604c0fdf08347dd1fa4ee062a822a5dd06b5d,
+bityuan,bty,Bityuan,0.03972064,28830724,N/A,
+spell-token,spell,Spell,0.00016796,28806986,0x090185f2135308bad17527004364ebcc2d37e5f6,
+liquity-usd,lusd,Liquity USD,1.004,28750916,0x5f98805a4e8be255a32880fdec7f6728c6568ba0,
+dovu-2,dovu,DOVU,0.00287861,28746201,0x2aeabde1ab736c59e9a19bed67681869eef39526,
+ishares-silver-trust-ondo-tokenized-stock,slvon,iShares Silver Trust (Ondo Tokenized Stock),66.84,28706276,0xf3e4872e6a4cf365888d93b6146a2baa7348f1a4,18.0
+ozapay,oza,Ozapay,0.03769111,28688323,N/A,
+templar,sn3,τemplar,6.49,28606652,N/A,
+osaka-protocol,osak,Osaka Protocol,3.7505e-08,28558144,0xa21af1050f7b26e0cff45ee51548254c41ed6b5c,
+audius,audio,Audius,0.02013204,28528153,0x18aaa7115705e8be94bffebde57af9bfc265b998,
+infinifi-locked-iusd-1week,liusd,infiniFi Locked iUSD (1week),1.16,28431699,0x12b004719fb632f1e7c010c6f5d6009fb4258442,18.0
+babyboomtoken,bbt,BabyBoomToken,0.166027,28370363,N/A,
+uchain-2,ucn,UCHAIN,283.69,28366034,N/A,
+uquid-coin,uqc,Uquid Coin,2.83,28274837,0x8806926ab68eb5a7b909dcaf6fdbe5d93271d6e2,
+metronome-synth-usd,msusd,Metronome Synth USD,0.996219,28237071,0xab5eb14c09d416f0ac63661e57edb7aecdb9befa,18.0
+sophon,soph,Sophon,0.00870952,28098402,0x6b7774cb12ed7573a7586e7d0e62a2a563ddd3f0,
+certik,ctk,Shentu,0.177751,28046516,N/A,
+milk-alliance,mlk,MiL.k,0.050973,28039790,N/A,
+stratis,strax,Xertra,0.0129419,27956448,N/A,
+stronghold-token,shx,Stronghold,0.00479743,27795839,0x516d31321928700c6b4fb0db0c8c6bc5d6799787,
+everipedia,iq,IQ,0.00106974,27389538,0x579cea1889991f68acc35ff5c3dd0621ff29b0c9,18.0
+monerium-eur-money,eure,Monerium EUR emoney [OLD],1.17,27175340,0x3231cb76718cdef2155fc47b5286d82e6eda273f,18.0
+allora,allo,Allora,0.121295,27122205,0x8408d45b61f5823298f19a09b53b7339c0280489,
+the-innovation-game,tig,The Innovation Game,0.946921,26937249,N/A,
+metal,mtl,Metal DAO,0.296069,26834479,N/A,
+amiko,amiko,Amiko,0.03366778,26784201,N/A,
+lcx,lcx,LCX,0.02845898,26779601,0x8cd41041505885ef0ad3858181d66f17be8aae7e,
+momentum-3,mmt,Momentum,0.131267,26756783,N/A,
+swarms,swarms,Swarms,0.02673997,26714080,N/A,
+aergo,aergo,Aergo,0.05621,26559817,0x91af0fbb28aba7e31403cb457106ce79397fd4e6,
+collector-crypt,cards,Collector Crypt,0.102906,26504087,N/A,
+auki-labs,auki,Auki,0.00649183,26476652,N/A,
+zentry,zent,Zentry,0.00339622,26450878,0xdbb7a34bf10169d6d2d0d02a6cbb436cf4381bfa,18.0
+lagrange,la,Lagrange,0.137029,26447732,0x0fc2a55d5bd13033f1ee0cdd11f60f7efe66f467,
+bugscoin,bgsc,BugsCoin,0.00241302,26444930,N/A,
+zelcash,flux,Flux,0.064761,26413057,N/A,
+pha,pha,PHALA,0.03156633,26383793,0x6c5ba91642f10282b576d91922ae6448c9d52f4e,
+noon-usn,usn,Noon USN,0.999957,26320693,0xda67b4284609d2d48e5d10cfac411572727dc1ed,
+orizon,ori,Orizon,56.11,26309095,N/A,
+based-one,based,Based,0.111698,26284842,0x4f2b33840227ddd0e28da8d4185d6fa07adfed87,18.0
+predictions,prdt,Predictions,1.093,26227262,N/A,
+onfa,oft,ONFA,0.243955,26173378,N/A,
+saakuru-labs,skr,Saakuru,6.515e-05,26121178,0xe2dca969624795985f2f083bcd0b674337ba130a,18.0
+cetus-protocol,cetus,Cetus Protocol,0.02790168,26095278,N/A,
+anime,anime,Animecoin,0.00470745,26037556,0x4dc26fc5854e7648a064a4abd590bbe71724c277,
+goldfish-gold,ggbr,Goldfish Gold,4.62,26037522,0x7e2ac793f3e692f388e66c7dc28f739d13b0b71a,
+a-hunters-dream,caw,A Hunters Dream,4.0831e-08,26004434,0xf3b9569f82b18aef890de263b84189bd33ebe452,
+ai-powered-finance,aipf,AI Powered Finance,2.19,26001169,N/A,
+bucket-protocol-buck-stablecoin,buck,Bucket Protocol BUCK Stablecoin,0.997812,25912791,N/A,

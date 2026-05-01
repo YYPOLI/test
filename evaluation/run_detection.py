@@ -10,15 +10,16 @@ import json
 import time
 import warnings
 
+from numpy import ma
 import pandas as pd
 from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from src.utils.config import CONFIG
-from src.permit_parser.context_retriever import KnowledgeBase
-from src.permit_parser.payload_decoder import DeepFactEnricher
-from src.cognitive_reasoner.constrained_inferencer import PermitGuardAuditor
+from src.permit_parser.context_retriever import ContextRetriever
+from src.permit_parser.payload_decoder import PayloadDecoder
+from src.cognitive_reasoner.constrained_inferencer import ConstrainedInferencer
 
 warnings.filterwarnings('ignore')
 
@@ -27,18 +28,20 @@ def main():
     main_start_time = time.perf_counter()
     print("Starting PermitGuard detection pipeline...")
 
+    os.makedirs(os.path.dirname(CONFIG["PATHS"]["OUTPUT_REPORT"]), exist_ok=True)
+
     start_time_1 = time.perf_counter()
-    kb = KnowledgeBase()
+    kb = ContextRetriever()
 
     try:
         df = pd.read_csv(CONFIG["PATHS"]["PARSED_DATASET"])
-        df = df.iloc[0:1000]
+        df = df.iloc[0:10]
         print(f"Loaded {len(df)} transactions for audit.")
     except Exception as e:
         print(f"Data loading failed: {e}")
         return
 
-    df['timestamp'] = pd.to_datetime(df['timestamp']).view('int64') // 10 ** 9
+    df['timestamp'] = pd.to_datetime(df['timestamp']).astype('int64') // 10 ** 9
     df['permit_value'] = df['permit_value'].astype(float)
     df['transfer_amount_hex'] = df['transfer_amount_hex'].astype(float)
     df['submitter_label'] = df['original_submitter'].map(kb.label_map)
@@ -51,8 +54,8 @@ def main():
     df['transfer_to_nametag'] = df['transfer_to'].map(kb.name_map)
     df['transfer_to_label'] = df['transfer_to_label'].fillna(0).astype(int)
 
-    enricher = DeepFactEnricher()
-    auditor = PermitGuardAuditor()
+    enricher = PayloadDecoder()
+    auditor = ConstrainedInferencer()
     results = []
     total = len(df)
 
@@ -127,9 +130,8 @@ def main():
         }
         results.append(final_record)
 
-        if (idx + 1) % 5 == 0:
-            with open(CONFIG["PATHS"]["OUTPUT_REPORT"], 'w', encoding='utf-8') as f:
-                json.dump(results, f, ensure_ascii=False, indent=2)
+        with open(CONFIG["PATHS"]["OUTPUT_REPORT"], 'w', encoding='utf-8') as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
 
     print(f"\nSaving report to {CONFIG['PATHS']['OUTPUT_REPORT']}")
     with open(CONFIG["PATHS"]["OUTPUT_REPORT"], 'w', encoding='utf-8') as f:

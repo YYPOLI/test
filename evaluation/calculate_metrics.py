@@ -61,6 +61,8 @@ def calculate_result():
     df_fp = df[(df['ground_truth'] == 0) & (df['pred_label'] == 1)]
     df_fn = df[(df['ground_truth'] == 1) & (df['pred_label'] == 0)]
 
+    os.makedirs(os.path.dirname(CONFIG["PATHS"]["FP_OUTPUT"]), exist_ok=True)
+
     print("\n" + "=" * 40)
     if not df_fp.empty:
         fp_path = CONFIG["PATHS"]["FP_OUTPUT"]

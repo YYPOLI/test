@@ -1,127 +1,200 @@
 # PermitGuard
 
-**An Interpretable Neuro-Symbolic Framework for Ethereum Permit Phishing Detection**
+This repository contains the artifacts for the paper: **"What You Expect Isn't What You Sign: Interpretable Detection of Ethereum Permit Phishing via Semantic Consistency"**, to appear at CCS 2026.
 
-PermitGuard is a neuro-symbolic detection framework that identifies ERC-20 permit phishing attacks by verifying *semantic consistency* between user authorization intent and on-chain execution outcomes. It combines deterministic invariant constraints with LLM-based cognitive reasoning to achieve high-accuracy, interpretable detection.
-
-## Architecture
-
-PermitGuard comprises three core modules:
-
-```
-┌──────────────────────────────────────────────────────────┐
-│                     PermitGuard                          │
-├──────────────┬──────────────────┬────────────────────────┤
-│ Permit Parser│ Semantic Aligner │ Cognitive Reasoner     │
-│ (Data Layer) │ (Constraint Layer)│ (Reasoning Layer)     │
-│              │                  │                        │
-│ • Payload    │ • Submitter      │ • State-Machine        │
-│   Decoder    │   Profiling      │   Controlled Prompt    │
-│ • Context    │ • Intent         │ • Double-Blind         │
-│   Retriever  │   Quantification │   Inference            │
-│ • Trace      │ • State          │ • Risk Verdict         │
-│   Fetcher    │   Transition     │   Generation           │
-│              │   Verification   │                        │
-└──────────────┴──────────────────┴────────────────────────┘
-```
+PermitGuard is an interpretable neuro-symbolic framework that detects ERC-20 permit phishing attacks by verifying *cross-stage semantic consistency* among submitter profile, permit intent, and state transitions. It transforms inconsistencies into invariant decision signals and guides LLM-based cognitive reasoning under strict state constraints to achieve robust, zero-shot detection with faithful forensic reports.
 
 ## Project Structure
 
 ```
 PermitGuard/
-├── src/                           # Core detection framework
+├── src/                             # Core detection framework (§5)
 │   ├── utils/
-│   │   ├── config.py              # Centralized configuration & API key management
-│   │   └── hex_parser.py          # On-chain data decoder (permit/transferFrom)
-│   ├── permit_parser/             # Module 1: Permit Parser
-│   │   ├── context_retriever.py   # KnowledgeBase: tokens, labels, entity profiles
-│   │   ├── trace_fetcher.py       # ForensicsAnalyzer: ghost detection & delayed drain
-│   │   └── payload_decoder.py     # DeepFactEnricher: raw tx → enriched fact sheet
-│   └── cognitive_reasoner/        # Module 2 & 3: Semantic Aligner + Cognitive Reasoner
-│       ├── constrained_inferencer.py  # SemanticAligner + PermitGuardAuditor
+│   │   ├── config.py                # Centralized configuration & API key management
+│   │   └── hex_parser.py            # On-chain data decoder (permit / transferFrom)
+│   ├── permit_parser/               # Permit Parser (§5.2)
+│   │   ├── payload_decoder.py       # PayloadDecoder: raw tx → semantic tuple P_tx
+│   │   ├── trace_fetcher.py         # TraceFetcher: delayed drain & ghost detection
+│   │   └── context_retriever.py     # ContextRetriever: token metadata, labels, profiles
+│   └── cognitive_reasoner/          # Semantic Aligner (§5.3) + Cognitive Reasoner (§5.4)
+│       ├── constrained_inferencer.py
 │       └── prompts/
-│           └── audit_prompt.txt   # Externalized LLM prompt template
+│           └── audit_prompt.txt     # Externalized LLM prompt template
 │
-├── data/                          # Data collection & preprocessing pipeline
-│   ├── 01_bigquery_extraction/    # BigQuery SQL (TODO: add .sql files)
-│   ├── 02_data_processing/        # JSONL cleaning, deduplication, parsing
-│   │   └── data_processor.py
-│   ├── 03_label_collection/       # Etherscan nametag crawling
+├── pipeline/                        # Data construction pipeline (§4.1)
+│   ├── bigquery_extraction/         # Stage 1: permit trace extraction from BigQuery
+│   │   ├── BQ_Permit_TFList_0117.sql
+│   │   └── run_extraction.py
+│   ├── data_processing/             # Stage 2: cleaning, deduplication, parsing
+│   │   ├── data_processor.py
+│   │   ├── spender_history_crawler.py
+│   │   ├── build_test_dataset.py    # Generate D_eval from cleaned data
+│   │   └── build_analysis_stats.py  # Generate monthly statistics for figures
+│   ├── label_collection/            # Stage 3: Etherscan nametag crawling
 │   │   └── etherscan_crawler.py
-│   └── 04_feature_engineering/    # Entity-level feature extraction
-│       └── feature_extractor.py
+│   └── feature_engineering/         # Stage 4: entity behavioral feature extraction
+│       ├── feature_extractor.py
+│       ├── submitter_extractor.py
+│       ├── transfer_extractor.py
+│       ├── interaction_features.py
+│       └── token_metadata_crawler.py
 │
-├── evaluation/                    # Detection pipeline & metrics
-│   ├── run_detection.py           # End-to-end detection entry point
-│   └── calculate_metrics.py       # Post-hoc F1/Precision/Recall/FPR calculation
+├── data/                            # Datasets for reproducibility
+│   ├── labeled_address/             # Pre-built: address label library (Label 0/1/2)
+│   ├── token_metadata/              # Pre-built: Top 1000 token decimals & prices
+│   ├── feature_profiles/            # Pre-built: entity behavioral features
+│   ├── test_dataset/                # Pre-built: D_eval 1000 sampled transactions (§6.1)
+│   ├── analysis_stats/              # Pre-built: monthly statistics for paper figures
+│   └── pipeline_output/             # Generated by pipeline scripts (gitignored)
+│       ├── raw_traces/              #   BigQuery JSON exports
+│       ├── cleaned/                 #   Cleaned & parsed CSVs
+│       ├── spender_history/         #   Etherscan spender tx history (24k+ dirs)
+│       └── token_metadata/          #   CoinGecko token metadata
 │
-├── visualization/                 # Paper figure generation
-│   ├── plot_figures.py            # All plotting functions
-│   └── figures/                   # Output directory for generated figures
+├── evaluation/                      # Detection & evaluation (§6)
+│   ├── run_detection.py             # End-to-end detection entry point
+│   └── calculate_metrics.py         # F1 / Precision / Recall / FPR calculation
 │
-├── sample/                        # Sample data for reproducibility (TODO)
-├── .env.example                   # API key template
-├── .gitignore
+├── visualization/                   # Paper figure generation
+│   └── plot_figures.py
+│
+├── result/                          # All outputs (auto-created at runtime)
+│   ├── reports/                     # Detection audit reports (JSON)
+│   ├── error_analysis/              # FP/FN case exports
+│   └── figures/                     # Generated figures (PDF/PNG)
+│
+├── .env.example                     # API key template
 ├── requirements.txt
 └── README.md
 ```
 
-## Setup
+## Supported Environments
+
+| Category | Requirement |
+|---|---|
+| OS | Windows or Linux |
+| Python | 3.10+ |
+| Network | Internet access for LLM API calls (Gemini / GPT / Qwen / DeepSeek) |
+| Disk | ~200 MB for pre-built datasets; ~20 GB additional if reconstructing from scratch |
+
+## Install
 
 1. Clone the repository:
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/PermitGuard.git
+git clone https://github.com/Web3Audit-Team/PermitGuard.git
 cd PermitGuard
 ```
 
 2. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. Configure API keys:
+
 ```bash
 cp .env.example .env
-# Edit .env with your actual API keys
+# Edit .env — at minimum, set one LLM API key (e.g. GEMINI_API_KEY)
 ```
 
-## Usage
+## Quick Start — Direct Testing
 
-### Run Detection
+The repository ships with pre-computed datasets under `data/`, so you can run detection and evaluation **without** a GCP account — just configure an LLM API key in `.env`.
+
+> **Note on spender history data:** The spender transaction history (`data/pipeline_output/spender_history/`) is not included in the repository due to its size (~3 GB). Before running detection, you need to crawl it once:
+>
+> ```bash
+> python pipeline/data_processing/spender_history_crawler.py
+> ```
+>
+> This fetches historical transactions from Etherscan for each spender address in the test dataset. An `ETHERSCAN_API_KEY` in `.env` is required (free tier: 5 calls/sec). The crawling takes approximately 2–4 hours depending on network speed.
+
+### Run Detection (~10 min for 10 transactions)
+
 ```bash
 python evaluation/run_detection.py
 ```
 
-### Calculate Metrics from Saved Report
+Results are saved to `result/reports/PermitGuard_Audit_Report.json`. Each entry contains the transaction hash, the detection verdict (phishing / benign), the ground-truth label, and a full forensic report.
+
+### Calculate Metrics
+
 ```bash
 python evaluation/calculate_metrics.py
 ```
 
+Reads the audit report and outputs F1-Score, Precision, Recall, and FPR to the console. FP/FN cases are exported to `result/error_analysis/`.
+
 ### Generate Paper Figures
+
 ```bash
 python visualization/plot_figures.py monthly_permits
 python visualization/plot_figures.py combined_features_dumbbell
+python visualization/plot_figures.py combined_feature_bar_chart
+python visualization/plot_figures.py quality_of_reports
 ```
 
-## Data Pipeline
+Figures are saved as PDF/PNG to `result/figures/`.
 
-The data processing pipeline follows four stages:
+## Complete Data Pipeline (Optional)
 
-1. **BigQuery Extraction** — SQL queries to extract permit execution traces from Ethereum
-2. **Data Processing** — Clean, deduplicate, and parse raw JSONL exports
-3. **Label Collection** — Crawl Etherscan for address nametags and assign labels
-4. **Feature Engineering** — Extract behavioral features for Spender/Submitter entities
+If you want to reproduce the full data construction process from scratch (§4.1), the `pipeline/` directory implements the four-stage pipeline. **This is entirely optional** — all downstream data files are already included in `data/`.
+
+### Prerequisites
+
+- A Google Cloud Platform project with BigQuery API enabled (free tier: 1 TB/month).
+- Local authentication: `gcloud auth application-default login`.
+- An Etherscan API key (free tier: 5 calls/sec). Register at https://etherscan.io/myapikey.
+- Add `GCP_PROJECT_ID` and `ETHERSCAN_API_KEY` to your `.env` file.
+
+### Pipeline Steps
+
+```bash
+# Stage 1: Extract raw permit traces from BigQuery
+python pipeline/bigquery_extraction/run_extraction.py
+
+# Stage 2: Clean and parse the extracted traces
+python pipeline/data_processing/data_processor.py
+
+# Stage 2 (supplement): Crawl spender historical transactions from Etherscan
+python pipeline/data_processing/spender_history_crawler.py
+
+# Stage 4 (supplement): Fetch token metadata from CoinGecko + on-chain decimals
+python pipeline/feature_engineering/token_metadata_crawler.py
+```
+
+All pipeline outputs are isolated under `data/pipeline_output/` (gitignored) and will **never overwrite** the pre-built data in `data/test_dataset/`, `data/feature_profiles/`, etc.
+
+## Data Pipeline Overview
+
+| Stage | Script | Input | Output |
+|---|---|---|---|
+| 1. BigQuery Extraction | `run_extraction.py` | Ethereum public dataset (BigQuery) | `pipeline_output/raw_traces/` |
+| 2. Data Processing | `data_processor.py` | Raw JSONL traces | `pipeline_output/raw_traces/cleaned/` |
+| 2+. Spender History | `spender_history_crawler.py` | Cleaned CSV (spender addresses) | `pipeline_output/spender_history/` |
+| 3. Label Collection | `etherscan_crawler.py` | Address list | `data/labeled_address/` |
+| 4. Feature Engineering | `feature_extractor.py` etc. | Cleaned data + spender history | `data/feature_profiles/` |
+| 4+. Token Metadata | `token_metadata_crawler.py` | CoinGecko API + Ethereum RPC | `pipeline_output/token_metadata/` |
+| D_eval Generation | `build_test_dataset.py` | Cleaned CSVs + label library | `data/test_dataset/` |
+| Analysis Stats | `build_analysis_stats.py` | Cleaned CSVs + label library | `data/analysis_stats/` |
 
 ## Citation
 
-If you use PermitGuard in your research, please cite:
-
 ```bibtex
-@article{permitguard2026,
-  title={PermitGuard: An Interpretable Neuro-Symbolic Framework for Ethereum Permit Phishing Detection},
-  year={2026}
+@inproceedings{permitguard2026,
+  title     = {What You Expect Isn't What You Sign: Interpretable Detection of
+               Ethereum Permit Phishing via Semantic Consistency},
+  booktitle = {Proceedings of the 2026 ACM SIGSAC Conference on Computer and
+               Communications Security (CCS '26)},
+  year      = {2026}
 }
 ```
+
+## Contact
+
+If you have any questions, please get in touch with us.
 
 ## License
 

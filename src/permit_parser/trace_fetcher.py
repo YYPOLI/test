@@ -5,8 +5,12 @@ from typing import Dict, Any
 from src.utils.config import CONFIG
 
 
-class ForensicsAnalyzer:
-    """Queries local historical transaction data to determine ghost status and delayed drain behavior."""
+class TraceFetcher:
+    """
+    Trace Fetcher (§5.2): responsible for tracking the actual execution trajectory.
+    Performs posterior tracking on non-atomic transactions to complete the full
+    dynamic execution traces τ, capturing delayed harvesting behavior.
+    """
 
     def __init__(self, history_dir: str = None):
         self.history_dir = history_dir or CONFIG["PATHS"]["HISTORY_DIR"]

@@ -27,8 +27,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from src.utils.config import CONFIG
 
 BASE_PATH = CONFIG["BASE_PATH"]
-ANALYSIS_DIR = os.path.join(BASE_PATH, "BigQuery_since20251230/analysis/")
-FIGURE_DIR = os.path.join(os.path.dirname(__file__), "figures")
+ANALYSIS_DIR = os.path.join(BASE_PATH, "analysis_stats")
+FIGURE_DIR = CONFIG["PATHS"]["FIGURE_DIR"]
 os.makedirs(FIGURE_DIR, exist_ok=True)
 
 
@@ -50,7 +50,7 @@ def monthly_permits():
     """Fig: Monthly permit transaction trend with phishing ratio overlay."""
     _setup_academic_style()
 
-    csv_path = os.path.join(ANALYSIS_DIR, 'monthly_permit_deep_analysis_0209_2300.csv')
+    csv_path = os.path.join(ANALYSIS_DIR, 'monthly_permit_deep_analysis.csv')
     df = pd.read_csv(csv_path)
     df['Period'] = pd.to_datetime(df['Period'])
     df = df[(df['Period'] >= '2023-01-01') & (df['Period'] <= '2024-09-30')]
@@ -104,55 +104,6 @@ def monthly_permits():
     plt.savefig(os.path.join(FIGURE_DIR, 'permit_landscape_trend.pdf'), dpi=300, bbox_inches='tight')
     plt.show()
 
-
-def plot_global_atomicity():
-    """Fig: Monthly atomicity trend comparison between benign and phishing."""
-    _setup_academic_style()
-
-    csv_path = os.path.join(ANALYSIS_DIR, 'monthly_atomic_stats.csv')
-    df = pd.read_csv(csv_path)
-    df['Period'] = pd.to_datetime(df['Period'])
-
-    norm_atomic = df['Norm_Atomic_Pct'] * 100
-    norm_delayed = df['Norm_Delayed_Pct'] * 100
-    phish_atomic = df['Phish_Atomic_Pct'] * 100
-    phish_delayed = df['Phish_Delayed_Pct'] * 100
-
-    fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=(12, 10), gridspec_kw={'hspace': 0.15})
-    width = 20
-    color_atomic = '#2c3e50'
-    color_delayed = '#e67e22'
-
-    ax1.bar(df['Period'], norm_atomic, width=width, label='Atomic (Same Tx)', color=color_atomic, edgecolor='black', linewidth=0.5)
-    ax1.bar(df['Period'], norm_delayed, width=width, bottom=norm_atomic, label='Delayed (Separate Tx)', color=color_delayed, edgecolor='black', linewidth=0.5)
-    ax1.set_ylabel('Percentage (%)', fontweight='bold')
-    ax1.set_title('(a) Normal Users: Atomicity Trend', loc='left', fontweight='bold', pad=10)
-    ax1.set_ylim(0, 100)
-    ax1.yaxis.set_major_formatter(mtick.PercentFormatter())
-    ax1.legend(loc='lower center', bbox_to_anchor=(0.5, 1.1), ncol=2, frameon=False)
-
-    ax2.bar(df['Period'], phish_atomic, width=width, color=color_atomic, edgecolor='black', linewidth=0.5)
-    ax2.bar(df['Period'], phish_delayed, width=width, bottom=phish_atomic, color=color_delayed, edgecolor='black', linewidth=0.5)
-    ax2.set_ylabel('Percentage (%)', fontweight='bold')
-    ax2.set_xlabel('Timeline (Month)', fontweight='bold')
-    ax2.set_title('(b) Phishing Attacks: Atomicity Trend', loc='left', fontweight='bold', pad=10)
-    ax2.set_ylim(0, 100)
-    ax2.yaxis.set_major_formatter(mtick.PercentFormatter())
-
-    padding = pd.Timedelta(days=15)
-    ax2.set_xlim(df['Period'].min() - padding, df['Period'].max() + padding)
-    ax2.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
-    ax2.xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))
-    ax2.xaxis.set_minor_locator(mdates.MonthLocator(interval=1))
-
-    for ax in [ax1, ax2]:
-        ax.grid(axis='y', linestyle='--', alpha=0.3)
-        ax.spines['top'].set_visible(False)
-        ax.spines['right'].set_visible(False)
-
-    plt.tight_layout()
-    plt.savefig(os.path.join(FIGURE_DIR, 'monthly_atomicity_trend_comparison.pdf'), dpi=300, bbox_inches='tight')
-    plt.show()
 
 
 def combined_feature_bar_chart():
@@ -331,7 +282,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description="Generate paper figures")
     parser.add_argument("func", nargs="?", default="monthly_permits",
-                        choices=["monthly_permits", "plot_global_atomicity",
+                        choices=["monthly_permits",
                                  "combined_feature_bar_chart", "combined_features_dumbbell",
                                  "quality_of_reports"])
     args = parser.parse_args()

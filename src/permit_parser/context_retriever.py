@@ -4,8 +4,12 @@ from typing import Dict
 from src.utils.config import CONFIG
 
 
-class KnowledgeBase:
-    """Singleton that manages all static knowledge bases (tokens, labels, entity profiles)."""
+class ContextRetriever:
+    """
+    Context Retriever (§5.2): responsible for supplementing the external knowledge base K.
+    Bridges on-chain transactions with external environmental knowledge including
+    token metadata, fiat prices, and dynamically updated address label library.
+    """
 
     _instance = None
 

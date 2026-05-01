@@ -15,8 +15,11 @@ build/
 *.csv
 *.json
 *.jsonl
-!sample/*.json
-!sample/*.csv
+!data/**/*.csv
+!data/**/*.json
+# Pipeline-generated data (can be very large, rebuild with pipeline/ scripts)
+data/pipeline_output/
+!data/pipeline_output/.gitkeep
 
 # IDE
 .idea/
@@ -29,21 +32,27 @@ build/
 .DS_Store
 Thumbs.db
 desktop.ini
+*.downloading
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Output
-visualization/figures/*.png
-visualization/figures/*.pdf
+# Result outputs (generated at runtime, keep .gitkeep for directory structure)
+result/reports/*.json
+result/error_analysis/*.json
+result/figures/*.png
+result/figures/*.pdf
+!result/**/.gitkeep
 output/
 
 # Original flat scripts (kept for reference, not part of the refactored codebase)
 PermitGuard_blind.py
 new_permit_json_data_process.py
+generate_test_dataset.py
 etherscan_nametag.py
 print_figures.py
 plot_combined_features.py
+spider_history&token_info.py
 
 # Paper manuscript
 permitguard.md
