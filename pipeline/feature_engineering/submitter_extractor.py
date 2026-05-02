@@ -39,7 +39,7 @@ def safe_to_int(x):
 def run_submitter_analysis():
     print("Starting Submitter feature extraction...")
 
-    # --- 1. Load knowledge bases ---
+    # Load knowledge bases
     label_path = PATHS["ADDRESS_LABELS"]
     df_labels = pd.read_csv(label_path, usecols=['address', 'label', 'nametag'], encoding_errors='replace')
     df_labels['address'] = df_labels['address'].str.lower().str.strip()
@@ -56,7 +56,7 @@ def run_submitter_analysis():
     df_spender['address'] = df_spender['address'].str.lower().str.strip()
     ghost_map = df_spender.set_index('address')['is_ghost'].to_dict()
 
-    # --- 2. Load permit transaction data ---
+    # Load permit transaction data
     FILE_PATH = PATHS["PIPELINE_CLEANED_DIR"]
     files = get_file_list(FILE_PATH, "cleaned_202*.csv")
     all_permit = []
@@ -74,7 +74,7 @@ def run_submitter_analysis():
 
     df_all = pd.concat(all_permit, ignore_index=True)
 
-    # --- 3. Preprocessing ---
+    # Preprocessing
     col_to_str = ['original_submitter', 'relayer', 'token_address', 'permit_owner',
                   'permit_spender', 'transfer_from', 'transfer_to']
     for col in col_to_str:
@@ -87,10 +87,10 @@ def run_submitter_analysis():
     df_all['final_transfer_amount'] = 0.0
     df_all['execution_status'] = 'Unused_Dormant'
 
-    SPENDER_HISTORY_PATH = os.path.join(BASE_PATH, "verified_permit/labeled_address/1_order_0609/")
+    SPENDER_HISTORY_PATH = CONFIG["PATHS"]["HISTORY_DIR"]
     TRANSFER_FROM_METHOD = "0x23b872dd"
 
-    # --- 4. Resolve atomic & delayed transfers ---
+    # Resolve atomic & delayed transfers
     mask_atomic = df_all['is_atomic'] == True
     df_all.loc[mask_atomic, 'final_transfer_to'] = df_all.loc[mask_atomic, 'transfer_to']
     df_all.loc[mask_atomic, 'execution_status'] = 'Atomic'
@@ -148,7 +148,7 @@ def run_submitter_analysis():
         df_all.loc[list(idx_list), 'execution_status'] = 'Used_Delayed'
         print(f"  Resolved {len(updates)} delayed drains")
 
-    # --- 5. Label mapping ---
+    # Label mapping
     df_all['label_submitter'] = df_all['original_submitter'].map(label_map)
     df_all['label_relayer'] = df_all['relayer'].map(label_map)
     df_all['label_spender'] = df_all['permit_spender'].map(label_map)
@@ -158,7 +158,7 @@ def run_submitter_analysis():
     df_all['is_infinite_value'] = df_all['permit_value'].apply(lambda x: float(x) > 1e50)
     df_all['is_infinite_deadline'] = df_all['permit_deadline'].apply(lambda x: x > 1e14)
 
-    # --- 6. Per-row feature computation ---
+    # Per-row feature computation
     df_all['feat_direct_call'] = (df_all['original_submitter'] == df_all['relayer'])
     df_all['feat_self_submit'] = (df_all['original_submitter'] == df_all['permit_owner'])
     df_all['feat_ghost_spender'] = df_all['permit_spender'].map(ghost_map)
@@ -179,7 +179,7 @@ def run_submitter_analysis():
     df_all['feat_infinite_value'] = df_all['is_infinite_value']
     df_all['feat_infinite_deadline'] = df_all['is_infinite_deadline']
 
-    # --- 7. Aggregation by submitter ---
+    # Aggregation by submitter
     df_all['target_lp_token'] = df_all['token_address'].where(df_all['feat_lp_token'] == 1)
 
     agg_funcs = {
@@ -275,4 +275,3 @@ def analyze_submitter_results():
 
 if __name__ == '__main__':
     run_submitter_analysis()
-    # analyze_submitter_results()

@@ -6,7 +6,7 @@ matches atomic transfers, detects anomalous patterns, and outputs cleaned CSVs.
 Two entry points:
   1. clean_from_jsonl()  — reads data/raw_traces/permit_traces.jsonl (from Stage 1)
                            and outputs to data/raw_traces/cleaned/  (isolated)
-  2. clean_and_inspect_json_data() — reads external monthly JSON files (legacy mode)
+  2. clean_and_inspect_json_data() — reads external monthly JSON files
 """
 
 import os
@@ -30,7 +30,7 @@ from src.utils.hex_parser import HexParser
 from src.utils.config import CONFIG
 
 BASE_PATH = CONFIG["BASE_PATH"]
-BQ_PATH = os.path.join(BASE_PATH, "BigQuery_since20251230/new_data_0117")
+BQ_PATH = CONFIG["PATHS"]["PIPELINE_OUTPUT_DIR"]
 
 
 def get_file_list(data_dir, name="*.json"):
@@ -374,9 +374,9 @@ def clean_from_jsonl(input_path=None, output_dir=None):
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description="Stage 2: Data cleaning & parsing")
-    parser.add_argument("--mode", choices=["jsonl", "legacy"], default="jsonl",
+    parser.add_argument("--mode", choices=["jsonl", "batch"], default="jsonl",
                         help="jsonl: read data/raw_traces/permit_traces.jsonl (default); "
-                             "legacy: read external monthly JSON files")
+                             "batch: read external monthly JSON files")
     parser.add_argument("--input", default=None, help="Override input file path")
     parser.add_argument("--output-dir", default=None, help="Override output directory")
     args = parser.parse_args()

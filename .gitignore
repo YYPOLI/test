@@ -44,16 +44,3 @@ result/figures/*.png
 result/figures/*.pdf
 !result/**/.gitkeep
 output/
-
-# Original flat scripts (kept for reference, not part of the refactored codebase)
-PermitGuard_blind.py
-new_permit_json_data_process.py
-generate_test_dataset.py
-etherscan_nametag.py
-print_figures.py
-plot_combined_features.py
-RQ3_plot.py
-spider_history&token_info.py
-
-# Paper manuscript
-permitguard.md

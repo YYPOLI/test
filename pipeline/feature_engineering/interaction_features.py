@@ -42,7 +42,7 @@ def compute_interaction_features():
     """Compute 9 composite binary features by merging entity profiles with transaction data."""
     print("Starting interaction feature computation...")
 
-    # 1. Load permit transactions
+    # Load permit transactions
     FILE_PATH = PATHS["PIPELINE_CLEANED_DIR"]
     files = get_file_list(FILE_PATH, "cleaned_202*.csv")
     all_permit = []
@@ -66,10 +66,10 @@ def compute_interaction_features():
 
     df_all['timestamp'] = pd.to_datetime(df_all['timestamp'], errors='coerce', utc=True).astype('int64') // 10 ** 9
 
-    # 2. Load knowledge bases
+    # Load knowledge bases
     sp_map, sb_map, tf_df, tk_df = _load_knowledge_base()
 
-    # 3. Merge transfer features
+    # Merge transfer features
     if not tf_df.empty:
         print("  Merging transfer features...")
         df_all = pd.merge(df_all, tf_df, on=['tx_hash', 'permit_trace', 'transfer_trace'], how='left')
@@ -79,7 +79,7 @@ def compute_interaction_features():
         df_all['execution_status'] = 'Unknown'
         df_all['feat_7_utilization'] = 0.0
 
-    # 4. Map entity profiles
+    # Map entity profiles
     df_all['sp_label'] = df_all['permit_spender'].apply(lambda x: sp_map.get(x, {}).get('label_spender', 0))
     df_all['sp_is_ghost'] = df_all['permit_spender'].apply(lambda x: sp_map.get(x, {}).get('is_ghost', True))
     df_all['sp_lifespan'] = df_all['permit_spender'].apply(lambda x: sp_map.get(x, {}).get('lifespan_hours', 0))
@@ -87,13 +87,13 @@ def compute_interaction_features():
     df_all['sb_tx_count'] = df_all['original_submitter'].apply(lambda x: sb_map.get(x, {}).get('total_txs', 1))
     df_all['top_token'] = df_all['token_address'].isin(tk_df['contract_address'])
 
-    # 5. Compute base flags
+    # Compute base flags
     df_all['flag_inf_amt'] = pd.to_numeric(df_all['permit_value'], errors='coerce') > 1e50
     df_all['flag_inf_time'] = (pd.to_numeric(df_all['permit_deadline'], errors='coerce') - df_all['timestamp']) > 31536000
     df_all['flag_self_submit'] = df_all['original_submitter'] == df_all['permit_owner']
     df_all['flag_relayer_spender'] = df_all['relayer'] == df_all['permit_spender']
 
-    # 6. Compute 9 composite features
+    # Compute composite features
     print("  Computing composite features...")
 
     df_all['feat_unverified_infinite'] = (df_all['flag_inf_amt'] & df_all['sp_is_ghost']).astype(int)
@@ -106,7 +106,7 @@ def compute_interaction_features():
     df_all['feat_lp_token'] = (df_all['flag_self_submit'] & df_all['flag_relayer_spender'] & df_all['feat_5_reflection']).astype(int)
     df_all['feat_strange'] = (df_all['flag_self_submit'] & df_all['flag_relayer_spender'] & df_all['feat_6_third_party']).astype(int)
 
-    # 7. Save
+    # Save results
     cols_to_save = [
         'tx_hash', 'label', 'timestamp', 'permit_trace', 'transfer_trace',
         'execution_status', 'feat_7_utilization',
@@ -169,4 +169,3 @@ def analyze_interaction_features():
 
 if __name__ == '__main__':
     compute_interaction_features()
-    # analyze_interaction_features()

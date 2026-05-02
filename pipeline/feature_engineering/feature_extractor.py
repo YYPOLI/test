@@ -175,12 +175,14 @@ def run_spender_analysis():
     df_token_1000 = pd.read_csv(token_path, encoding_errors='replace')
     df_token_1000['contract_address'] = df_token_1000['contract_address'].str.lower().str.strip()
 
-    large_path = os.path.join(BASE_PATH, "verified_permit/labeled_address/large_address_0124.csv")
-    df_large = pd.read_csv(large_path, encoding_errors='replace')
-    df_large['address'] = df_large['address'].str.lower().str.strip()
-    super_large_set = set(df_large[df_large['super_large'] == True]['address'])
+    large_path = os.path.join(PATHS["PIPELINE_OUTPUT_DIR"], "cleaned", "large_addresses.csv")
+    super_large_set = set()
+    if os.path.exists(large_path):
+        df_large = pd.read_csv(large_path, encoding_errors='replace')
+        df_large['address'] = df_large['address'].str.lower().str.strip()
+        super_large_set = set(df_large[df_large['super_large'] == True]['address'])
 
-    spender_path = os.path.join(BQ_PATH, "cleaned_data/train_data/all_spender_address_21months_9528.csv")
+    spender_path = os.path.join(PATHS["PIPELINE_OUTPUT_DIR"], "cleaned", "all_spender_addresses.csv")
     df_spender = pd.read_csv(spender_path, usecols=['address', 'address_type'], encoding_errors='replace')
     df_spender['address'] = df_spender['address'].str.lower().str.strip()
     df_spender['label_spender'] = df_spender['address'].map(label_map)
@@ -249,4 +251,3 @@ def analyze_spender_results():
 
 if __name__ == '__main__':
     run_spender_analysis()
-    # analyze_spender_results()

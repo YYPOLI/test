@@ -10,50 +10,33 @@ RESULT_DIR = os.path.join(PROJECT_ROOT, "result")
 
 BASE_DATA_PATH = os.getenv("BASE_DATA_PATH", "")
 
-def _resolve(data_relative: str, full_path: str) -> str:
-    """Use full external path if BASE_DATA_PATH is set, otherwise fall back to data/."""
-    if BASE_DATA_PATH:
-        return os.path.join(BASE_DATA_PATH, full_path)
-    return os.path.join(DATA_DIR, data_relative)
+def _data_path(relative: str) -> str:
+    """Resolve a path relative to the data directory (or BASE_DATA_PATH if set)."""
+    base = BASE_DATA_PATH or DATA_DIR
+    return os.path.join(base, relative)
 
 CONFIG = {
     "GEMINI_API_KEY": os.getenv("GEMINI_API_KEY", ""),
     "QWEN_API_KEY": os.getenv("QWEN_API_KEY", ""),
-    "QWEN_BASE_URL": os.getenv("QWEN_BASE_URL", "https://coding.dashscope.aliyuncs.com/v1"),
+    "QWEN_BASE_URL": os.getenv("QWEN_BASE_URL", "https://dashscope.aliyuncs.com/compatible-mode/v1"),
     "DEEPSEEK_API_KEY": os.getenv("DEEPSEEK_API_KEY", ""),
     "DEEPSEEK_BASE_URL": os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
     "GPT_API_KEY": os.getenv("GPT_API_KEY", ""),
-    "GPT_BASE_URL": os.getenv("GPT_BASE_URL", "https://api.aiearth.dev/v1"),
+    "GPT_BASE_URL": os.getenv("GPT_BASE_URL", "https://api.openai.com/v1"),
 
     "API_PROVIDER": "gemini",
     "MODEL_NAME": "gemini-3-flash-preview",
 
     "BASE_PATH": BASE_DATA_PATH or DATA_DIR,
     "PATHS": {
-        "PARSED_DATASET": _resolve(
-            "test_dataset/test_dataset.csv",
-            "BigQuery_since20251230/new_data_0117/cleaned_data/test_dataset_2024Q4_1000_0209.csv"),
-        "TOKEN_KB": _resolve(
-            "token_metadata/token_metadata.csv",
-            "verified_permit/labeled_address/features/Top_1000_Tokens_Decimals.csv"),
-        "ADDRESS_LABELS": _resolve(
-            "labeled_address/labeled_addresses.csv",
-            "BigQuery_since20251230/new_data_0117/cleaned_data/labeled_address/all_labeled_address_883071.csv"),
-        "HISTORY_DIR": _resolve(
-            "spender_history",
-            "verified_permit/labeled_address/1_order_0609"),
-        "SPENDER_FEATURES": _resolve(
-            "feature_profiles/spender_features.csv",
-            "BigQuery_since20251230/analysis/spender_analysis_result_3months_0209.csv"),
-        "SUBMITTER_FEATURES": _resolve(
-            "feature_profiles/submitter_features.csv",
-            "BigQuery_since20251230/analysis/original_submitter_analysis_result_3months_0211.csv"),
-        "TRANSFER_FEATURES": _resolve(
-            "feature_profiles/transfer_features.csv",
-            "BigQuery_since20251230/analysis/transfer_analysis_result_3months_0209.csv"),
-        "COMBINED_FEATURES": _resolve(
-            "feature_profiles/interaction_features.csv",
-            "BigQuery_since20251230/analysis/interaction_features_result_3months_0209.csv"),
+        "PARSED_DATASET": _data_path("test_dataset/test_dataset.csv"),
+        "TOKEN_KB": _data_path("token_metadata/token_metadata.csv"),
+        "ADDRESS_LABELS": _data_path("labeled_address/labeled_addresses.csv"),
+        "HISTORY_DIR": _data_path("spender_history"),
+        "SPENDER_FEATURES": _data_path("feature_profiles/spender_features.csv"),
+        "SUBMITTER_FEATURES": _data_path("feature_profiles/submitter_features.csv"),
+        "TRANSFER_FEATURES": _data_path("feature_profiles/transfer_features.csv"),
+        "COMBINED_FEATURES": _data_path("feature_profiles/interaction_features.csv"),
         "PIPELINE_OUTPUT_DIR": PIPELINE_OUTPUT_DIR,
         "RAW_TRACES_JSONL": os.path.join(PIPELINE_OUTPUT_DIR, "raw_traces", "permit_traces.jsonl"),
         "PIPELINE_CLEANED_DIR": os.path.join(PIPELINE_OUTPUT_DIR, "raw_traces", "cleaned"),

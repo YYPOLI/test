@@ -2,8 +2,6 @@
 Stage 3: Etherscan nametag crawling and address labeling.
 Crawls Etherscan public pages to retrieve nametags and contract types,
 then assigns labels (benign=2, malicious=1, no_tag=0).
-
-Refactored from: etherscan_nametag.py
 """
 
 import os
@@ -23,7 +21,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../.."))
 from src.utils.config import CONFIG
 
 BASE_PATH = CONFIG["BASE_PATH"]
-BQ_PATH = os.path.join(BASE_PATH, "BigQuery_since20251230/new_data_0117")
+BQ_PATH = CONFIG["PATHS"]["PIPELINE_OUTPUT_DIR"]
 
 
 HEADERS = {

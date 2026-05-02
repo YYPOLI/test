@@ -5,9 +5,6 @@ Reads cleaned monthly permit CSVs, joins with the address label library to
 derive ground-truth labels, then performs stratified sampling to produce a
 balanced test set with a controllable malicious ratio.
 
-Reproduces the logic of the original ``build_test_dataset()`` in
-generate_test_dataset.py.
-
 Usage:
     python pipeline/data_processing/build_test_dataset.py
     python pipeline/data_processing/build_test_dataset.py --n 1000 --quarter 2024Q4 --ratio 0.15
@@ -75,13 +72,13 @@ def build(input_dir=None, labels_csv=None, output_path=None,
 
     random.seed(seed)
 
-    # --- 1. Load malicious address set ---
+    # Load malicious address set
     df_label = pd.read_csv(labels_csv, encoding_errors="replace")
     df_label["address"] = df_label["address"].str.lower().str.strip()
     malicious_addresses = set(df_label[df_label["label"] == 1]["address"].unique())
     print(f"  Malicious addresses: {len(malicious_addresses)}")
 
-    # --- 2. Scan monthly files, build candidate pool ---
+    # Scan monthly files, build candidate pool
     files = _get_file_list(input_dir)
     if not files:
         print(f"[Error] No cleaned CSV files found in {input_dir}")
@@ -114,12 +111,12 @@ def build(input_dir=None, labels_csv=None, output_path=None,
     df_candidates = pd.concat(candidate_rows, ignore_index=True)
     print(f"  Candidate pool: {len(df_candidates)} rows")
 
-    # --- 3. Assign ground truth labels ---
+    # Assign ground truth labels
     df_candidates["ground_truth_label"] = df_candidates.apply(
         lambda row: _check_malicious(row, malicious_addresses), axis=1
     )
 
-    # --- 4. Stratified sampling ---
+    # Stratified sampling
     if malicious_ratio is not None and 0 < malicious_ratio < 1:
         target_malicious = int(n * malicious_ratio)
         target_benign = n - target_malicious
@@ -139,7 +136,7 @@ def build(input_dir=None, labels_csv=None, output_path=None,
             n=min(len(df_candidates), n), random_state=seed
         ).reset_index(drop=True)
 
-    # --- 5. Save ---
+    # Save
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     df_final.to_csv(output_path, index=False)
 

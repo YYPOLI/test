@@ -6,9 +6,6 @@ computes monthly phishing statistics (Total_Tx, Phishing_Tx_Count,
 Phishing_Tx_Pct, label distributions), and saves the summary CSV
 to data/analysis_stats/.
 
-This script reproduces the logic of the original
-``analyze_permit_deep_dive()`` function.
-
 Usage:
     python pipeline/data_processing/build_analysis_stats.py
     python pipeline/data_processing/build_analysis_stats.py --input-dir data/pipeline_output/cleaned

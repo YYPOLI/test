@@ -22,7 +22,7 @@ PATHS = CONFIG["PATHS"]
 def run_transfer_analysis():
     print("Starting Transfer feature extraction...")
 
-    # --- 1. Load knowledge bases ---
+    # Load knowledge bases
     label_path = PATHS["ADDRESS_LABELS"]
     df_labels = pd.read_csv(label_path, usecols=['address', 'label', 'nametag'], encoding_errors='replace')
     df_labels['address'] = df_labels['address'].str.lower().str.strip()
@@ -33,7 +33,7 @@ def run_transfer_analysis():
     df_token_1000['contract_address'] = df_token_1000['contract_address'].str.lower().str.strip()
     decimal_map = df_token_1000.set_index('contract_address')['decimals'].to_dict()
 
-    # --- 2. Load permit data ---
+    # Load permit data
     FILE_PATH = PATHS["PIPELINE_CLEANED_DIR"]
     files = get_file_list(FILE_PATH, "cleaned_202*.csv")
     all_permit = []
@@ -51,7 +51,7 @@ def run_transfer_analysis():
 
     df_all = pd.concat(all_permit, ignore_index=True)
 
-    # --- 3. Preprocessing ---
+    # Preprocessing
     cols_to_clean = ['permit_spender', 'permit_owner', 'original_submitter', 'relayer', 'transfer_to', 'token_address']
     for col in cols_to_clean:
         if col in df_all.columns:
@@ -62,10 +62,10 @@ def run_transfer_analysis():
     df_all['final_transfer_amount'] = 0.0
     df_all['execution_status'] = 'Unused_Dormant'
 
-    SPENDER_HISTORY_PATH = os.path.join(BASE_PATH, "verified_permit/labeled_address/1_order_0609/")
+    SPENDER_HISTORY_PATH = CONFIG["PATHS"]["HISTORY_DIR"]
     TRANSFER_FROM_METHOD = "0x23b872dd"
 
-    # --- 4. Resolve atomic & delayed ---
+    # Resolve atomic & delayed transfers
     mask_atomic = df_all['is_atomic'] == True
     df_all.loc[mask_atomic, 'final_transfer_to'] = df_all.loc[mask_atomic, 'transfer_to']
     df_all.loc[mask_atomic, 'execution_status'] = 'Atomic'
@@ -119,7 +119,7 @@ def run_transfer_analysis():
         df_all.loc[list(idx_list), 'execution_status'] = 'Used_Delayed'
         print(f"  Resolved {len(updates)} delayed drains")
 
-    # --- 5. Topology classification ---
+    # Topology classification
     conditions = [
         (df_all['final_transfer_to'] == 'none'),
         (df_all['final_transfer_to'] == df_all['permit_spender']),
@@ -131,7 +131,7 @@ def run_transfer_analysis():
     choices = ['No_Transfer', 'Self-Loop', 'Kickback/Sweep', 'Solver-Settlement', 'Self-Rescue', 'Reflection']
     df_all['feat_topology'] = np.select(conditions, choices, default='Third-Party Leakage')
 
-    # --- 6. Utilization rate ---
+    # Utilization rate
     df_all['decimals'] = df_all['token_address'].map(decimal_map).fillna(18)
     permit_val = pd.to_numeric(df_all['permit_value'], errors='coerce').fillna(0.0)
     has_transfer = df_all['final_transfer_amount'] > 0
@@ -145,7 +145,7 @@ def run_transfer_analysis():
     inf_used_mask = has_transfer & is_infinite
     df_all.loc[inf_used_mask, 'feat_utilization'] = 0.0001
 
-    # --- 7. Label mapping & ground truth ---
+    # Label mapping & ground truth
     df_all['label_submitter'] = df_all['original_submitter'].map(label_map).fillna(0).astype(int)
     df_all['label_spender'] = df_all['permit_spender'].map(label_map).fillna(0).astype(int)
     df_all['label_relayer'] = df_all['relayer'].map(label_map).fillna(0).astype(int)
@@ -166,7 +166,7 @@ def run_transfer_analysis():
     df_all['feat_6_third_party'] = (df_all['feat_topology'] == 'Third-Party Leakage').astype(int)
     df_all.rename(columns={'feat_utilization': 'feat_7_utilization'}, inplace=True)
 
-    # --- 8. Save ---
+    # Save results
     final_cols = [
         'tx_hash', 'label', 'label_submitter', 'label_spender', 'label_tf_to',
         'permit_trace', 'transfer_trace', 'execution_status',
@@ -230,4 +230,3 @@ def analyze_transfer_result():
 
 if __name__ == '__main__':
     run_transfer_analysis()
-    # analyze_transfer_result()

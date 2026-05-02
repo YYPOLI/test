@@ -104,7 +104,7 @@ def fig2_permit_trend():
                  fontsize=14, fontweight='bold')
 
     plt.tight_layout()
-    plt.savefig(os.path.join(FIGURE_DIR, 'permit_landscape_trend.pdf'), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(FIGURE_DIR, 'fig2_permit_trend.pdf'), dpi=300, bbox_inches='tight')
     plt.show()
 
 
@@ -176,8 +176,7 @@ def fig3_cross_stage_semantics():
     legend.get_frame().set_linewidth(0.5)
 
     plt.tight_layout(pad=0.5)
-    plt.savefig(os.path.join(FIGURE_DIR, 'combined_features_dumbbell.pdf'), bbox_inches='tight', dpi=300, pad_inches=0.05)
-    plt.savefig(os.path.join(FIGURE_DIR, 'combined_features_dumbbell.png'), bbox_inches='tight', dpi=300, pad_inches=0.05)
+    plt.savefig(os.path.join(FIGURE_DIR, 'fig3_cross_stage_semantics.pdf'), bbox_inches='tight', dpi=300, pad_inches=0.05)
     plt.show()
 
 
@@ -229,7 +228,7 @@ def fig5_report_quality():
                frameon=False, fontsize=9, columnspacing=0.8, handletextpad=0.3)
 
     plt.tight_layout()
-    plt.savefig(os.path.join(FIGURE_DIR, 'RQ3_Boxplot_Evaluation.pdf'), bbox_inches='tight')
+    plt.savefig(os.path.join(FIGURE_DIR, 'fig5_report_quality.pdf'), bbox_inches='tight')
     plt.show()
 
 

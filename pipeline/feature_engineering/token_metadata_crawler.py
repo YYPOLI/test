@@ -49,12 +49,12 @@ def _api_get_with_retry(url, params=None, max_retries=5):
 
 
 def fetch_market_data(num_tokens=1000):
-    """Step 1: Get Top N tokens by market cap from CoinGecko."""
+    """Get Top N tokens by market cap from CoinGecko."""
     per_page = 250
     pages = (num_tokens + per_page - 1) // per_page
     market_data = []
 
-    print(f"[Step 1/{3}] Fetching Top {num_tokens} token market data ({pages} pages)...")
+    print(f"Fetching Top {num_tokens} token market data ({pages} pages)...")
     for page in range(1, pages + 1):
         params = {
             "vs_currency": "usd", "order": "market_cap_desc",
@@ -74,8 +74,8 @@ def fetch_market_data(num_tokens=1000):
 
 
 def fetch_contract_addresses():
-    """Step 2: Get Ethereum contract addresses for all CoinGecko tokens."""
-    print(f"\n[Step 2/{3}] Fetching Ethereum contract address list...")
+    """Get Ethereum contract addresses for all CoinGecko tokens."""
+    print(f"\nFetching Ethereum contract address list...")
     url = "https://api.coingecko.com/api/v3/coins/list?include_platform=true"
     data = _api_get_with_retry(url)
     if not data:
@@ -92,8 +92,8 @@ def fetch_contract_addresses():
 
 
 def query_decimals(df):
-    """Step 3: Query on-chain decimals for each contract address via RPC."""
-    print(f"\n[Step 3/{3}] Querying on-chain decimals for {len(df)} tokens...")
+    """Query on-chain decimals for each contract address via Ethereum RPC."""
+    print(f"\nQuerying on-chain decimals for {len(df)} tokens...")
     decimals_list = []
 
     for i, row in df.iterrows():
